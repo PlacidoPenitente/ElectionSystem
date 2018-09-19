@@ -1,4 +1,5 @@
 ﻿using ElectionSystem.Facades;
+using ElectionSystem.Models;
 using System.Data.Entity;
 using System.Linq;
 
@@ -10,10 +11,14 @@ namespace ElectionSystem.ViewModels
         {
             Model = voterModel;
             Workspace = workspaceViewModell;
+            SaveCommand = new DelegateCommand(Save);
+            CancelCommand = new DelegateCommand(Cancel);
         }
 
         public WorkspaceViewModel Workspace { get; }
         public VoterModel Model { get; }
+        public DelegateCommand SaveCommand { get; }
+        public DelegateCommand CancelCommand { get; }
 
         public void Cancel()
         {
