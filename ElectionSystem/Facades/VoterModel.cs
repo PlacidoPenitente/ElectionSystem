@@ -3,7 +3,7 @@ using System;
 
 namespace ElectionSystem.Facades
 {
-    public class VoterModel : BaseInpc
+    public sealed class VoterModel : BaseInpc
     {
         private readonly Voter _voter;
 

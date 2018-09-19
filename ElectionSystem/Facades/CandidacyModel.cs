@@ -2,7 +2,7 @@
 
 namespace ElectionSystem.Facades
 {
-    public class CandidacyModel : BaseInpc
+    public sealed class CandidacyModel : BaseInpc
     {
         private readonly Candidacy _candidacy;
 

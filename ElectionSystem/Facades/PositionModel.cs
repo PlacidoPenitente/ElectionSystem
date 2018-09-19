@@ -2,7 +2,7 @@
 
 namespace ElectionSystem.Facades
 {
-    public class PositionModel : BaseInpc
+    public sealed class PositionModel : BaseInpc
     {
         private readonly Position _position;
 

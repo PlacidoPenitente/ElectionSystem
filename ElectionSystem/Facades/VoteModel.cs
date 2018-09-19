@@ -2,7 +2,7 @@
 
 namespace ElectionSystem.Facades
 {
-    public class VoteModel : BaseInpc
+    public sealed class VoteModel : BaseInpc
     {
         private readonly Vote _vote;
 

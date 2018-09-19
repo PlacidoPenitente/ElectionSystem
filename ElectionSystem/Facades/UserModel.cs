@@ -2,7 +2,7 @@
 
 namespace ElectionSystem.Facades
 {
-    public class UserModel : BaseInpc
+    public sealed class UserModel : BaseInpc
     {
         private readonly User _user;
 
