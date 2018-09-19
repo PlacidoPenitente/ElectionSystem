@@ -62,6 +62,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BaseInpc.cs" />
+    <Compile Include="Migrations\201809191751278_ReconstructedModels.cs" />
+    <Compile Include="Migrations\201809191751278_ReconstructedModels.Designer.cs">
+      <DependentUpon>201809191751278_ReconstructedModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Ballot.cs" />
+    <Compile Include="Models\Candidacy.cs" />
+    <Compile Include="Models\Election.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\Vote.cs" />
+    <Compile Include="IPage.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -87,7 +98,6 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountType.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
-    <Compile Include="Models\Candidate.cs" />
     <Compile Include="Models\Gender.cs" />
     <Compile Include="Models\Party.cs" />
     <Compile Include="Models\Position.cs" />
@@ -111,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809170600169_AddedWinners.resx">
       <DependentUpon>201809170600169_AddedWinners.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809191751278_ReconstructedModels.resx">
+      <DependentUpon>201809191751278_ReconstructedModels.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
