@@ -5,81 +5,79 @@ namespace ElectionSystem.Facades
 {
     public sealed class VoterModel : BaseInpc
     {
-        private readonly Voter _voter;
-
         public VoterModel(Voter voter)
         {
-            _voter = voter;
+            Voter = voter;
         }
 
-        public int Id { get => _voter.Id; }
+        public Voter Voter { get; }
 
         public string FirstName
         {
-            get => _voter.FirstName;
+            get => Voter.FirstName;
             set
             {
-                _voter.FirstName = value;
+                Voter.FirstName = value;
                 OnPropertyChanged();
             }
         }
 
         public string MiddleName
         {
-            get => _voter.MiddleName;
+            get => Voter.MiddleName;
             set
             {
-                _voter.MiddleName = value;
+                Voter.MiddleName = value;
                 OnPropertyChanged();
             }
         }
 
         public string LastName
         {
-            get => _voter.LastName;
+            get => Voter.LastName;
             set
             {
-                _voter.LastName = value;
+                Voter.LastName = value;
                 OnPropertyChanged();
             }
         }
 
         public DateTime Birthdate
         {
-            get => _voter.Birthdate;
+            get => Voter.Birthdate;
             set
             {
-                _voter.Birthdate = value;
+                Voter.Birthdate = value;
                 OnPropertyChanged();
             }
         }
 
         public Gender Gender
         {
-            get => _voter.Gender;
+            get => Voter.Gender;
             set
             {
-                _voter.Gender = value;
+                Voter.Gender = value;
                 OnPropertyChanged();
             }
         }
 
         public string Address
         {
-            get => _voter.Address;
+            get => Voter.Address;
             set
             {
-                _voter.Address = value;
+                Voter.Address = value;
                 OnPropertyChanged();
             }
         }
 
         public string Photo
         {
-            get => _voter.Photo;
+            get => Voter.Photo;
             set
             {
-                _voter.Photo = value;
+                Voter.Photo = value;
                 OnPropertyChanged();
             }
         }

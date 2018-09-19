@@ -90,7 +90,13 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Vote.cs" />
     <Compile Include="IPage.cs" />
+    <Compile Include="ViewModels\BaseWorkspacePageViewModel.cs" />
     <Compile Include="ViewModels\CreateUpdateVoterViewModel.cs" />
+    <Compile Include="ViewModels\ICreateUpdateViewModel.cs" />
+    <Compile Include="ViewModels\IReadViewModel.cs" />
+    <Compile Include="ViewModels\IWorkspacePageViewModel.cs" />
+    <Compile Include="ViewModels\ReadVotersViewModel.cs" />
+    <Compile Include="ViewModels\WorkspaceViewModel.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
