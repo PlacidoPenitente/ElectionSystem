@@ -7,8 +7,8 @@ namespace ElectionSystem.ViewModels
         ObservableCollection<T> Collection { get; set; }
         T Selected { get; set; }
 
-        void Load();
-        void AddNew();
+        void Read();
+        void Create();
         void Update();
         void Delete();
     }

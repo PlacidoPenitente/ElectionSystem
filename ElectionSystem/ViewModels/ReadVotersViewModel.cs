@@ -31,14 +31,13 @@ namespace ElectionSystem.ViewModels
             }
         }
 
-        public void Load()
-        {
-            Collection = new ObservableCollection<Voter>(DbContext.Voters);
-        }
-
-        public void AddNew()
+        public void Create()
         {
             Workspace.GotoCreateUpdateVoter();
+        }
+        public void Read()
+        {
+            Collection = new ObservableCollection<Voter>(DbContext.Voters);
         }
 
         public void Update()
