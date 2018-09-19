@@ -1,5 +1,4 @@
 ﻿using ElectionSystem.Facades;
-using ElectionSystem.Models;
 using System.Data.Entity;
 using System.Linq;
 

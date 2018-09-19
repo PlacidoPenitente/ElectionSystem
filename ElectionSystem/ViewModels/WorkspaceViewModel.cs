@@ -15,6 +15,7 @@ namespace ElectionSystem.ViewModels
         public WorkspaceViewModel()
         {
             _createUpdateVoter = new CreateUpdateVoterViewModel(new VoterModel(_voter), this);
+            _readVoters = new ReadVotersViewModel();
         }
 
         public IWorkspacePageViewModel CurrentPage
