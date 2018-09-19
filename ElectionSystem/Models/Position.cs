@@ -2,7 +2,7 @@
 
 namespace ElectionSystem.Models
 {
-    public class Position
+    public sealed class Position : BaseModel
     {
         public int Id { get; set; }
         [Required]

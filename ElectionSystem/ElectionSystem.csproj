@@ -67,7 +67,16 @@
     <Compile Include="Migrations\201809191751278_ReconstructedModels.Designer.cs">
       <DependentUpon>201809191751278_ReconstructedModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809191759388_AddedByDateAddedAndDateModified.cs" />
+    <Compile Include="Migrations\201809191759388_AddedByDateAddedAndDateModified.Designer.cs">
+      <DependentUpon>201809191759388_AddedByDateAddedAndDateModified.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809191801157_RemovedModifiedByInUsers.cs" />
+    <Compile Include="Migrations\201809191801157_RemovedModifiedByInUsers.Designer.cs">
+      <DependentUpon>201809191801157_RemovedModifiedByInUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ballot.cs" />
+    <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Candidacy.cs" />
     <Compile Include="Models\Election.cs" />
     <Compile Include="Models\User.cs" />
@@ -124,6 +133,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809191751278_ReconstructedModels.resx">
       <DependentUpon>201809191751278_ReconstructedModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809191759388_AddedByDateAddedAndDateModified.resx">
+      <DependentUpon>201809191759388_AddedByDateAddedAndDateModified.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809191801157_RemovedModifiedByInUsers.resx">
+      <DependentUpon>201809191801157_RemovedModifiedByInUsers.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

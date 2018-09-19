@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ElectionSystem.Models
 {
-    public class User
+    public sealed class User
     {
         public int Id { get; set; }
         [Required]

@@ -1,6 +1,6 @@
 ﻿namespace ElectionSystem.Models
 {
-    public class Candidacy
+    public sealed class Candidacy : BaseModel
     {
         public int Id { get; set; }
         public Voter Candidate { get; set; }
