@@ -63,6 +63,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BaseInpc.cs" />
+    <Compile Include="Facades\PartyModel.cs" />
     <Compile Include="Facades\PositionModel.cs" />
     <Compile Include="Facades\UserModel.cs" />
     <Compile Include="Facades\VoteModel.cs" />
