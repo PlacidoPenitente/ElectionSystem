@@ -5,10 +5,19 @@ namespace ElectionSystem.ViewModels
 {
     public class ReadVotersViewModel : BaseWorkspacePageViewModel, IReadViewModel<Voter>, IWorkspacePageViewModel
     {
-        public WorkspaceViewModel Workspace { get; }
-
         private ObservableCollection<Voter> _collection;
+        private Voter _selected;
 
+        public ReadVotersViewModel()
+        {
+            CreateCommand = new DelegateCommand(Create);
+            ReadCommand = new DelegateCommand(Read);
+            UpdateCommand = new DelegateCommand(Update);
+            DeleteCommand = new DelegateCommand(Delete);
+        }
+
+        public WorkspaceViewModel Workspace { get; }
+        
         public ObservableCollection<Voter> Collection
         {
             get => _collection;
@@ -19,8 +28,6 @@ namespace ElectionSystem.ViewModels
             }
         }
 
-        private Voter _selected;
-
         public Voter Selected
         {
             get => _selected;
@@ -30,6 +37,14 @@ namespace ElectionSystem.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        public DelegateCommand CreateCommand { get; }
+
+        public DelegateCommand ReadCommand { get; }
+
+        public DelegateCommand UpdateCommand { get; }
+
+        public DelegateCommand DeleteCommand { get; }
 
         public void Create()
         {
