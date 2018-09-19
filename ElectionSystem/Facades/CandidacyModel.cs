@@ -4,41 +4,39 @@ namespace ElectionSystem.Facades
 {
     public sealed class CandidacyModel : BaseInpc
     {
-        private readonly Candidacy _candidacy;
-
         public CandidacyModel(Candidacy candidacy)
         {
-            _candidacy = candidacy;
+            Candidacy = candidacy;
         }
 
-        public int Id { get => _candidacy.Id; }
+        public Candidacy Candidacy { get; }
 
         public Voter Candidate
         {
-            get => _candidacy.Candidate;
+            get => Candidacy.Candidate;
             set
             {
-                _candidacy.Candidate = value;
+                Candidacy.Candidate = value;
                 OnPropertyChanged();
             }
         }
 
         public Party Party
         {
-            get => _candidacy.Party;
+            get => Candidacy.Party;
             set
             {
-                _candidacy.Party = value;
+                Candidacy.Party = value;
                 OnPropertyChanged();
             }
         }
 
         public Position Position
         {
-            get => _candidacy.Position;
+            get => Candidacy.Position;
             set
             {
-                _candidacy.Position = value;
+                Candidacy.Position = value;
                 OnPropertyChanged();
             }
         }

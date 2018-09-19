@@ -4,31 +4,29 @@ namespace ElectionSystem.Facades
 {
     public sealed class ElectionModel : BaseInpc
     {
-        private readonly Election _election;
-
         public ElectionModel(Election election)
         {
-            _election = election;
+            Election = election;
         }
 
-        public int Id { get => _election.Id; }
+        public Election Election { get; }
 
         public string Name
         {
-            get => _election.Name;
+            get => Election.Name;
             set
             {
-                _election.Name = value;
+                Election.Name = value;
                 OnPropertyChanged();
             }
         }
 
         public bool IsOpen
         {
-            get => _election.IsOpen;
+            get => Election.IsOpen;
             set
             {
-                _election.IsOpen = value;
+                Election.IsOpen = value;
                 OnPropertyChanged();
             }
         }

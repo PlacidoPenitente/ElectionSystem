@@ -4,31 +4,29 @@ namespace ElectionSystem.Facades
 {
     public sealed class PositionModel : BaseInpc
     {
-        private readonly Position _position;
-
         public PositionModel(Position position)
         {
-            _position = position;
+            Position = position;
         }
 
-        public int Id { get => _position.Id; }
+        public Position Position { get; }
 
-        public string Position
+        public string Name
         {
-            get => _position.Name;
+            get => Position.Name;
             set
             {
-                _position.Name = value;
+                Position.Name = value;
                 OnPropertyChanged();
             }
         }
 
         public Election Election
         {
-            get => _position.Election;
+            get => Position.Election;
             set
             {
-                _position.Election= value;
+                Position.Election= value;
                 OnPropertyChanged();
             }
         }

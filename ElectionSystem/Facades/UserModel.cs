@@ -4,41 +4,39 @@ namespace ElectionSystem.Facades
 {
     public sealed class UserModel : BaseInpc
     {
-        private readonly User _user;
-
         public UserModel(User user)
         {
-            _user = user;
+            User = user;
         }
 
-        public int Id { get => _user.Id; }
+        public User User { get; }
 
         public string Username
         {
-            get => _user.Username;
+            get => User.Username;
             set
             {
-                _user.Username = value;
+                User.Username = value;
                 OnPropertyChanged();
             }
         }
 
         public string Password
         {
-            get => _user.Password;
+            get => User.Password;
             set
             {
-                _user.Password = value;
+                User.Password = value;
                 OnPropertyChanged();
             }
         }
 
         public AccountType AccountType
         {
-            get => _user.AccountType;
+            get => User.AccountType;
             set
             {
-                _user.AccountType = value;
+                User.AccountType = value;
                 OnPropertyChanged();
             }
         }

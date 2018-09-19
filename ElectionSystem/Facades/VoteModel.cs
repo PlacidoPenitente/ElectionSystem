@@ -4,31 +4,29 @@ namespace ElectionSystem.Facades
 {
     public sealed class VoteModel : BaseInpc
     {
-        private readonly Vote _vote;
-
         public VoteModel(Vote vote)
         {
-            _vote = vote;
+            Vote = vote;
         }
 
-        public int Id { get => _vote.Id; }
+        public Vote Vote { get; }
 
         public Candidacy Candidacy
         {
-            get => _vote.Candidacy;
+            get => Vote.Candidacy;
             set
             {
-                _vote.Candidacy= value;
+                Vote.Candidacy= value;
                 OnPropertyChanged();
             }
         }
 
         public Ballot Ballot
         {
-            get => _vote.Ballot;
+            get => Vote.Ballot;
             set
             {
-                _vote.Ballot= value;
+                Vote.Ballot= value;
                 OnPropertyChanged();
             }
         }

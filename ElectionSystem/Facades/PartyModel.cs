@@ -4,31 +4,29 @@ namespace ElectionSystem.Facades
 {
     public sealed class PartyModel : BaseInpc
     {
-        private readonly Party _party;
-
         public PartyModel(Party party)
         {
-            _party = party;
+            Party = party;
         }
 
-        public int Id { get => _party.Id; }
+        public Party Party { get; }
 
         public string Name
         {
-            get => _party.Name;
+            get => Party.Name;
             set
             {
-                _party.Name = value;
+                Party.Name = value;
                 OnPropertyChanged();
             }
         }
 
         public string Logo
         {
-            get => _party.Logo;
+            get => Party.Logo;
             set
             {
-                _party.Logo = value;
+                Party.Logo = value;
                 OnPropertyChanged();
             }
         }
