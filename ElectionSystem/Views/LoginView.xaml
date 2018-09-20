@@ -7,6 +7,19 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <StackPanel>
+                <TextBox/>
+                <PasswordBox/>
+                <Button Content="{StaticResource LogIn}" Command="{Binding LoginCommand}"/>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Column="1">
+            <TextBlock Text="{StaticResource About}" TextWrapping="Wrap"/>
+        </Grid>
     </Grid>
 </UserControl>

@@ -91,7 +91,6 @@
     <Compile Include="Models\Election.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Vote.cs" />
-    <Compile Include="IPage.cs" />
     <Compile Include="ViewModels\BaseWorkspacePageViewModel.cs" />
     <Compile Include="ViewModels\CreateUpdateVoterViewModel.cs" />
     <Compile Include="ViewModels\ICreateUpdateViewModel.cs" />
@@ -123,6 +122,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Resources\DataTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Strings.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

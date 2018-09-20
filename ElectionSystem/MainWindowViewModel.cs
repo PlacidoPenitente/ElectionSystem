@@ -4,15 +4,15 @@ namespace ElectionSystem
 {
     public class MainWindowViewModel : BaseInpc
     {
-        private WorkspaceViewModel _workspace;
-        private LoginViewModel _loginPage;
+        private readonly WorkspaceViewModel _workspace;
+        private readonly LoginViewModel _loginPage;
         private IPage _currentPage;
 
         public MainWindowViewModel()
         {
-            Workspace = new WorkspaceViewModel(this);
-            LoginPage = new LoginViewModel(this);
-            CurrentPage = (IPage)Workspace;
+            _workspace = new WorkspaceViewModel(this);
+            _loginPage = new LoginViewModel(this);
+            CurrentPage = _loginPage;
         }
 
         public IPage CurrentPage
@@ -25,24 +25,14 @@ namespace ElectionSystem
             }
         }
 
-        public WorkspaceViewModel Workspace
+        public void GotoWorkspace()
         {
-            get => _workspace;
-            set
-            {
-                _workspace = value;
-                OnPropertyChanged();
-            }
+            CurrentPage = _workspace;
         }
 
-        public LoginViewModel LoginPage
+        public void GotoLogin()
         {
-            get => _loginPage;
-            set
-            {
-                _loginPage = value;
-                OnPropertyChanged();
-            }
+            CurrentPage = _loginPage;
         }
     }
 }
