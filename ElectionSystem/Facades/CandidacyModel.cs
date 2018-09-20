@@ -4,12 +4,7 @@ namespace ElectionSystem.Facades
 {
     public sealed class CandidacyModel : BaseInpc
     {
-        public CandidacyModel(Candidacy candidacy)
-        {
-            Candidacy = candidacy;
-        }
-
-        public Candidacy Candidacy { get; }
+        public Candidacy Candidacy { get; set; }
 
         public Voter Candidate
         {

@@ -9,14 +9,12 @@ namespace ElectionSystem.ViewModels
         private readonly CreateUpdateVoterViewModel _createUpdateVoter;
         private readonly ReadVotersViewModel _readVoters;
 
-        private Voter _voter;
-
         private IWorkspacePageViewModel _currentPage;
 
         public WorkspaceViewModel(MainWindowViewModel mainWindowViewModel)
         {
             _mainWindow = mainWindowViewModel;
-            _createUpdateVoter = new CreateUpdateVoterViewModel(new VoterModel(_voter), this);
+            _createUpdateVoter = new CreateUpdateVoterViewModel(new VoterModel(), this);
             _readVoters = new ReadVotersViewModel(this);
             CurrentPage = _readVoters;
         }
@@ -37,8 +35,7 @@ namespace ElectionSystem.ViewModels
         {
             _createUpdateVoter.Title = "Update Voter";
             if (voter == null) _createUpdateVoter.Title = "Register new Voter";
-            _voter = null;
-            _voter = voter ?? new Voter();
+            _createUpdateVoter.Model.Voter = voter ?? new Voter();
             CurrentPage = _createUpdateVoter;
         }
 

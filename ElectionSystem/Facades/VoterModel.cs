@@ -5,12 +5,7 @@ namespace ElectionSystem.Facades
 {
     public sealed class VoterModel : BaseInpc
     {
-        public VoterModel(Voter voter)
-        {
-            Voter = voter;
-        }
-
-        public Voter Voter { get; }
+        public Voter Voter { get; set; }
 
         public string FirstName
         {
@@ -42,7 +37,7 @@ namespace ElectionSystem.Facades
             }
         }
 
-        public DateTime Birthdate
+        public DateTime? Birthdate
         {
             get => Voter.Birthdate;
             set

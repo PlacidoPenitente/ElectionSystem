@@ -24,12 +24,12 @@
         <Grid Grid.Row="2">
             <DataGrid ItemsSource="{Binding Collection, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeRows="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="First Name" Binding="{Binding Model.FirstName}"/>
-                    <DataGridTextColumn Header="Middle Name" Binding="{Binding Model.MiddleName}"/>
-                    <DataGridTextColumn Header="Last Name" Binding="{Binding Model.LastName}"/>
-                    <DataGridTextColumn Header="Birthdate" Binding="{Binding Model.Birthdate}"/>
-                    <DataGridTextColumn Header="Gender" Binding="{Binding Model.Gender}"/>
-                    <DataGridTextColumn Header="Address" Binding="{Binding Model.Address}"/>
+                    <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}"/>
+                    <DataGridTextColumn Header="Middle Name" Binding="{Binding MiddleName}"/>
+                    <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}"/>
+                    <DataGridTextColumn Header="Birthdate" Binding="{Binding Birthdate}"/>
+                    <DataGridTextColumn Header="Gender" Binding="{Binding Gender}"/>
+                    <DataGridTextColumn Header="Address" Binding="{Binding Address}"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

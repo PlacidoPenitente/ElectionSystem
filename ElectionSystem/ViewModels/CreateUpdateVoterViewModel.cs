@@ -42,6 +42,7 @@ namespace ElectionSystem.ViewModels
             else
                 DbContext.Voters.Add(Model.Voter);
             DbContext.SaveChanges();
+            Workspace.GotoReadVoters();
         }
 
     }

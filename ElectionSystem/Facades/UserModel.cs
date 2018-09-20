@@ -4,12 +4,7 @@ namespace ElectionSystem.Facades
 {
     public sealed class UserModel : BaseInpc
     {
-        public UserModel(User user)
-        {
-            User = user;
-        }
-
-        public User User { get; }
+        public User User { get; set; }
 
         public string Username
         {

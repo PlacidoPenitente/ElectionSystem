@@ -15,5 +15,8 @@
     <system:String x:Key="VoterLastName">Last Name</system:String>
     <system:String x:Key="VoterBirthdate">Birthdate</system:String>
     <system:String x:Key="VoterAddress">Address</system:String>
+    <system:String x:Key="VoterGender">Gender</system:String>
+    <system:String x:Key="Save">Save</system:String>
+    <system:String x:Key="Cancel">Cancel</system:String>
 
 </ResourceDictionary>

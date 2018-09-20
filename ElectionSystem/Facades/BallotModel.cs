@@ -4,12 +4,7 @@ namespace ElectionSystem.Facades
 {
     public sealed class BallotModel : BaseInpc
     {
-        public BallotModel(Ballot ballot)
-        {
-            Ballot = ballot;
-        }
-
-        public Ballot Ballot { get; }
+        public Ballot Ballot { get; set; }
 
         public Voter Voter
         {

@@ -4,12 +4,7 @@ namespace ElectionSystem.Facades
 {
     public sealed class PositionModel : BaseInpc
     {
-        public PositionModel(Position position)
-        {
-            Position = position;
-        }
-
-        public Position Position { get; }
+        public Position Position { get; set; }
 
         public string Name
         {

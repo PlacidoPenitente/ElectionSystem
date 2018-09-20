@@ -67,6 +67,7 @@
     </ApplicationDefinition>
     <Compile Include="AttachedProperties.cs" />
     <Compile Include="BaseInpc.cs" />
+    <Compile Include="Converters\StringToGenderConverter.cs" />
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="Facades\BallotModel.cs" />
     <Compile Include="Facades\CandidacyModel.cs" />
@@ -88,6 +89,10 @@
     <Compile Include="Migrations\201809191801157_RemovedModifiedByInUsers.cs" />
     <Compile Include="Migrations\201809191801157_RemovedModifiedByInUsers.Designer.cs">
       <DependentUpon>201809191801157_RemovedModifiedByInUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809200955011_UpdatedDateTime.cs" />
+    <Compile Include="Migrations\201809200955011_UpdatedDateTime.Designer.cs">
+      <DependentUpon>201809200955011_UpdatedDateTime.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\Ballot.cs" />
     <Compile Include="Models\BaseModel.cs" />
@@ -129,6 +134,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Resources\ComboBoxStyles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Converters.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -205,6 +214,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809191801157_RemovedModifiedByInUsers.resx">
       <DependentUpon>201809191801157_RemovedModifiedByInUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809200955011_UpdatedDateTime.resx">
+      <DependentUpon>201809200955011_UpdatedDateTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

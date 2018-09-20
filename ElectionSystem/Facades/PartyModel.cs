@@ -4,12 +4,7 @@ namespace ElectionSystem.Facades
 {
     public sealed class PartyModel : BaseInpc
     {
-        public PartyModel(Party party)
-        {
-            Party = party;
-        }
-
-        public Party Party { get; }
+        public Party Party { get; set; }
 
         public string Name
         {

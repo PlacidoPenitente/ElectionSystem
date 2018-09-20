@@ -13,7 +13,7 @@ namespace ElectionSystem.Models
         [Required]
         [MaxLength(255)]
         public string LastName { get; set; }
-        public DateTime Birthdate { get; set; }
+        public DateTime? Birthdate { get; set; }
         public Gender Gender { get; set; }
         [Required]
         [MaxLength(255)]
