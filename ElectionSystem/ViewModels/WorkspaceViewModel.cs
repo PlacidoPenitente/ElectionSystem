@@ -7,7 +7,7 @@ namespace ElectionSystem.ViewModels
     {
         private readonly CreateUpdateVoterViewModel _createUpdateVoter;
         private readonly ReadVotersViewModel _readVoters;
-        
+
         private Voter _voter;
 
         private IWorkspacePageViewModel _currentPage;
@@ -30,6 +30,8 @@ namespace ElectionSystem.ViewModels
 
         public void GotoCreateUpdateVoter(Voter voter = null)
         {
+            _createUpdateVoter.Title = "Update Voter";
+            if (voter == null) _createUpdateVoter.Title = "Register new Voter";
             _voter = null;
             _voter = voter ?? new Voter();
             CurrentPage = _createUpdateVoter;
@@ -38,6 +40,11 @@ namespace ElectionSystem.ViewModels
         public void GotoReadVoters()
         {
             CurrentPage = _readVoters;
+        }
+
+        public void ShowYesNoDialog()
+        {
+
         }
     }
 }

@@ -6,6 +6,8 @@ namespace ElectionSystem.ViewModels
 {
     public class CreateUpdateVoterViewModel : BaseWorkspacePageViewModel, ICreateUpdateViewModel<VoterModel>, IWorkspacePageViewModel
     {
+        private string _title;
+
         public CreateUpdateVoterViewModel(VoterModel voterModel, WorkspaceViewModel workspaceViewModell)
         {
             Model = voterModel;
@@ -14,7 +16,15 @@ namespace ElectionSystem.ViewModels
             CancelCommand = new DelegateCommand(Cancel);
         }
 
-        public string Title { get; }
+        public string Title
+        {
+            get => _title;
+            set
+            {
+                _title = value;
+                OnPropertyChanged();
+            }
+        }
         public WorkspaceViewModel Workspace { get; }
         public VoterModel Model { get; }
         public DelegateCommand SaveCommand { get; }
