@@ -14,6 +14,7 @@ namespace ElectionSystem.ViewModels
             CancelCommand = new DelegateCommand(Cancel);
         }
 
+        public string Title { get; }
         public WorkspaceViewModel Workspace { get; }
         public VoterModel Model { get; }
         public DelegateCommand SaveCommand { get; }

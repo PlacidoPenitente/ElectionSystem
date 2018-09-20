@@ -10,10 +10,13 @@ namespace ElectionSystem.ViewModels
         DelegateCommand ReadCommand { get; }
         DelegateCommand UpdateCommand { get; }
         DelegateCommand DeleteCommand { get; }
+        DelegateCommand SearchCommand { get; }
+        string SearchTerm { get; set; }
 
-        void Read();
         void Create();
+        void Read();
         void Update();
         void Delete();
+        void Search();
     }
 }
