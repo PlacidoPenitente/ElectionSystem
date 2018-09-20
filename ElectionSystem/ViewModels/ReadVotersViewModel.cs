@@ -79,9 +79,10 @@ namespace ElectionSystem.ViewModels
         }
 
         public void Delete()
-        {
+        {  
             DbContext.Voters.Remove(Selected);
             DbContext.SaveChanges();
+            Read();
         }
 
         public void Search()

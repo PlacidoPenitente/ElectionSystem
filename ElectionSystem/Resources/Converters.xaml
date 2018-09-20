@@ -1,5 +1,5 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:converters="clr-namespace:ElectionSystem.Converters">
-    <converters:StringToGenderConverter x:Key="StringToGender"/>
+    <converters:IntegerToGenderConverter x:Key="IntegerToGender"/>
 </ResourceDictionary>

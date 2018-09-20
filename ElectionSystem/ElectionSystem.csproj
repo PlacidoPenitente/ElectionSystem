@@ -67,7 +67,7 @@
     </ApplicationDefinition>
     <Compile Include="AttachedProperties.cs" />
     <Compile Include="BaseInpc.cs" />
-    <Compile Include="Converters\StringToGenderConverter.cs" />
+    <Compile Include="Converters\IntegerToGenderConverter.cs" />
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="Facades\BallotModel.cs" />
     <Compile Include="Facades\CandidacyModel.cs" />
