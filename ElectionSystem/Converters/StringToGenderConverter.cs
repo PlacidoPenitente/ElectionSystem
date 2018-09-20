@@ -1,6 +1,7 @@
 ﻿using ElectionSystem.Models;
 using System;
 using System.Globalization;
+using System.Windows.Controls;
 using System.Windows.Data;
 
 namespace ElectionSystem.Converters
@@ -16,7 +17,8 @@ namespace ElectionSystem.Converters
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value.Equals("Male")) return Gender.Male;
+            var gender = ((ComboBoxItem)value).Content;
+            if (gender.Equals("Male")) return Gender.Male;
             return Gender.Female;
         }
     }

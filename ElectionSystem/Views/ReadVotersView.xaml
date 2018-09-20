@@ -21,15 +21,25 @@
             <TextBox Width="200" Text="{Binding SearchTerm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <Button Content="{StaticResource SearchVoters}" Command="{Binding SearchCommand}"/>
         </StackPanel>
-        <Grid Grid.Row="2">
-            <DataGrid ItemsSource="{Binding Collection, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeRows="False">
+        <Grid x:Name="main" Grid.Row="2">
+            <DataGrid ItemsSource="{Binding Collection, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Selected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeRows="False">
                 <DataGrid.Columns>
-                    <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}"/>
-                    <DataGridTextColumn Header="Middle Name" Binding="{Binding MiddleName}"/>
-                    <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}"/>
-                    <DataGridTextColumn Header="Birthdate" Binding="{Binding Birthdate}"/>
-                    <DataGridTextColumn Header="Gender" Binding="{Binding Gender}"/>
-                    <DataGridTextColumn Header="Address" Binding="{Binding Address}"/>
+                    <DataGridTextColumn Header="First Name" Binding="{Binding FirstName}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Middle Name" Binding="{Binding MiddleName}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Last Name" Binding="{Binding LastName}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Birthdate" Binding="{Binding Birthdate}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Gender" Binding="{Binding Gender}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Address" Binding="{Binding Address}" IsReadOnly="True"/>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <Button Content="{StaticResource Edit}" Command="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl}, Mode=FindAncestor}, Path=DataContext.UpdateCommand}"/>
+                                    <Button Content="{StaticResource Delete}" Command="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}, Path=DataContext.DeleteCommand}"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

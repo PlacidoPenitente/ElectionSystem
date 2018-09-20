@@ -18,5 +18,7 @@
     <system:String x:Key="VoterGender">Gender</system:String>
     <system:String x:Key="Save">Save</system:String>
     <system:String x:Key="Cancel">Cancel</system:String>
+    <system:String x:Key="Edit">Edit</system:String>
+    <system:String x:Key="Delete">Delete</system:String>
 
 </ResourceDictionary>

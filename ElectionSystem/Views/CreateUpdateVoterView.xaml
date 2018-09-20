@@ -12,7 +12,7 @@
             <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.MiddleName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterMiddleName}"/>
             <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterLastName}"/>
             <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.Birthdate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterBirthdate}"/>
-            <ComboBox SelectedIndex="0" Style="{StaticResource ComboBox}" SelectedItem="{Binding Model.Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToGender}}" local:AttachedProperties.Label="{StaticResource VoterGender}">
+            <ComboBox Style="{StaticResource ComboBox}" SelectedValue="{Binding Model.Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource StringToGender}}" local:AttachedProperties.Label="{StaticResource VoterGender}">
                 <ComboBoxItem Content="Male"/>
                 <ComboBoxItem Content="Female"/>
             </ComboBox>

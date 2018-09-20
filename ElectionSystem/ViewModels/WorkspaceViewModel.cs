@@ -41,6 +41,7 @@ namespace ElectionSystem.ViewModels
 
         public void GotoReadVoters()
         {
+            _readVoters.Read();
             CurrentPage = _readVoters;
         }
 
