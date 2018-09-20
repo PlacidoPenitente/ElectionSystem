@@ -2,20 +2,20 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:ElectionSystem.Resources"
                     xmlns:system="clr-namespace:System;assembly=mscorlib">
-    <system:String x:Key="About">
+    <system:String x:Key="AboutContent">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
     </system:String>
-
+    <system:String x:Key="About">About</system:String>
     <system:String x:Key="LogIn">Log In</system:String>
     <system:String x:Key="RegisterVoter">Register Voter</system:String>
     <system:String x:Key="LoadVoters">Load Voters</system:String>
     <system:String x:Key="SearchVoters">Search</system:String>
-    <system:String x:Key="VoterFirstName">First Name</system:String>
-    <system:String x:Key="VoterMiddleName">Middle Name</system:String>
-    <system:String x:Key="VoterLastName">Last Name</system:String>
-    <system:String x:Key="VoterBirthdate">Birthdate</system:String>
-    <system:String x:Key="VoterAddress">Address</system:String>
-    <system:String x:Key="VoterGender">Gender</system:String>
+    <system:String x:Key="VoterFirstName">First Name:</system:String>
+    <system:String x:Key="VoterMiddleName">Middle Name:</system:String>
+    <system:String x:Key="VoterLastName">Last Name:</system:String>
+    <system:String x:Key="VoterBirthdate">Birthdate:</system:String>
+    <system:String x:Key="VoterAddress">Address:</system:String>
+    <system:String x:Key="VoterGender">Gender:</system:String>
     <system:String x:Key="Save">Save</system:String>
     <system:String x:Key="Cancel">Cancel</system:String>
     <system:String x:Key="Edit">Edit</system:String>

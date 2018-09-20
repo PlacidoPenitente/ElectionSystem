@@ -36,7 +36,7 @@ namespace ElectionSystem.ViewModels
         public void GotoCreateUpdateVoter(Voter voter = null)
         {
             _createUpdateVoter.Title = "Update Voter";
-            if (voter == null) _createUpdateVoter.Title = "Register new Voter";
+            if (voter == null) _createUpdateVoter.Title = "Register New Voter";
             _createUpdateVoter.Model.Voter = voter ?? new Voter();
             CurrentPage = _createUpdateVoter;
         }

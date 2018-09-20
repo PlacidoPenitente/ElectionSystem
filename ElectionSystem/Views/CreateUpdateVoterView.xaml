@@ -7,24 +7,33 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <StackPanel Width="300">
-            <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterFirstName}"/>
-            <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.MiddleName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterMiddleName}"/>
-            <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterLastName}"/>
-            <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.Birthdate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterBirthdate}"/>
-            <ComboBox Style="{StaticResource ComboBox}" SelectedIndex="{Binding Model.Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource IntegerToGender}}" local:AttachedProperties.Label="{StaticResource VoterGender}">
-                <ComboBoxItem Content="Male"/>
-                <ComboBoxItem Content="Female"/>
-            </ComboBox>
-            <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterAddress}"/>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" Content="{StaticResource Save}" Command="{Binding SaveCommand}"/>
-                <Button Grid.Column="1" Content="{StaticResource Cancel}" Command="{Binding CancelCommand}"/>
-            </Grid>
-        </StackPanel>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Background="{StaticResource BelizeHole}">
+            <TextBlock Margin="20,0,20,0" Text="{Binding Title}" FontSize="15" Foreground="{StaticResource Clouds}" FontFamily="{StaticResource Roboto}" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid Grid.Row="1">
+            <StackPanel Width="300" VerticalAlignment="Center">
+                <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterFirstName}"/>
+                <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.MiddleName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterMiddleName}"/>
+                <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterLastName}"/>
+                <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.Birthdate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterBirthdate}"/>
+                <ComboBox Style="{StaticResource ComboBox}" SelectedIndex="{Binding Model.Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource IntegerToGender}}" local:AttachedProperties.Label="{StaticResource VoterGender}">
+                    <ComboBoxItem Content="Male"/>
+                    <ComboBoxItem Content="Female"/>
+                </ComboBox>
+                <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterAddress}"/>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Style="{StaticResource Button}" Grid.Column="0" Content="{StaticResource Save}" Command="{Binding SaveCommand}"/>
+                    <Button Style="{StaticResource Button}" Grid.Column="1" Content="{StaticResource Cancel}" Command="{Binding CancelCommand}"/>
+                </Grid>
+            </StackPanel>
+        </Grid>
     </Grid>
 </UserControl>

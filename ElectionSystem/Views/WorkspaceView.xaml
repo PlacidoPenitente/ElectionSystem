@@ -27,9 +27,11 @@
                     </ScrollViewer>
                 </Grid>
                 <Grid Grid.Column="1">
-                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                        <ContentControl Content="{Binding CurrentPage, UpdateSourceTrigger=PropertyChanged}"/>
-                    </ScrollViewer>
+                    <Border BorderThickness="2" BorderBrush="{StaticResource Turquoise}">
+                        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                            <ContentControl Content="{Binding CurrentPage, UpdateSourceTrigger=PropertyChanged}"/>
+                        </ScrollViewer>
+                    </Border>
                 </Grid>
                 <Grid Grid.Column="1">
                 </Grid>
