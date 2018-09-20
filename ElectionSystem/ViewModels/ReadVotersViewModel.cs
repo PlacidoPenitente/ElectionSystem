@@ -5,9 +5,9 @@ namespace ElectionSystem.ViewModels
 {
     public class ReadVotersViewModel : BaseWorkspacePageViewModel, IReadViewModel<Voter>, IWorkspacePageViewModel, IPage
     {
-        private ObservableCollection<Voter> _collection;
+        private ObservableCollection<Voter> _collection = new ObservableCollection<Voter>();
         private Voter _selected;
-        private string _searchTerm;
+        private string _searchTerm = "";
 
         public ReadVotersViewModel(WorkspaceViewModel workspaceViewModel)
         {
@@ -87,7 +87,7 @@ namespace ElectionSystem.ViewModels
         public void Search()
         {
             var tempList = new ObservableCollection<Voter>();
-            foreach (var voter in Collection)
+            foreach (var voter in DbContext.Voters)
             {
                 var firstNameFirst = string.Concat(voter.FirstName, voter.MiddleName, voter.LastName);
                 var lastNameFirst = string.Concat(voter.LastName, voter.FirstName, voter.MiddleName);
@@ -95,7 +95,6 @@ namespace ElectionSystem.ViewModels
                 if (firstNameFirst.Replace(" ", "").ToLower().Contains(SearchTerm.Replace(" ", "").ToLower())||
                     lastNameFirst.Replace(" ", "").ToLower().Contains(SearchTerm.Replace(" ", "").ToLower()))
                     tempList.Add(voter);
-                
             }
             Collection = tempList;
         }
