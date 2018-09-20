@@ -20,6 +20,6 @@
     
     <!--RegisterVoters-->
     <DataTemplate DataType="{x:Type viewmodels:CreateUpdateVoterViewModel}">
-        <views:/>
+        <views:CreateUpdateVoterView/>
     </DataTemplate>
 </ResourceDictionary>

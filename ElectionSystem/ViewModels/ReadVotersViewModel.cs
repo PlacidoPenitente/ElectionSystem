@@ -9,9 +9,10 @@ namespace ElectionSystem.ViewModels
         private Voter _selected;
         private string _searchTerm;
 
-        public ReadVotersViewModel()
+        public ReadVotersViewModel(WorkspaceViewModel workspaceViewModel)
         {
             Title = "Registered Voters";
+            Workspace = workspaceViewModel;
             CreateCommand = new DelegateCommand(Create);
             ReadCommand = new DelegateCommand(Read);
             UpdateCommand = new DelegateCommand(Update);

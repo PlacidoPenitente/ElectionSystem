@@ -10,4 +10,10 @@
     <system:String x:Key="RegisterVoter">Register Voter</system:String>
     <system:String x:Key="LoadVoters">Load Voters</system:String>
     <system:String x:Key="SearchVoters">Search</system:String>
+    <system:String x:Key="VoterFirstName">First Name</system:String>
+    <system:String x:Key="VoterMiddleName">Middle Name</system:String>
+    <system:String x:Key="VoterLastName">Last Name</system:String>
+    <system:String x:Key="VoterBirthdate">Birthdate</system:String>
+    <system:String x:Key="VoterAddress">Address</system:String>
+
 </ResourceDictionary>
