@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ElectionSystem.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,12 @@ namespace ElectionSystem.Views
         public LoginView()
         {
             InitializeComponent();
+        }
+
+        private void PasswordBox_PasswordChanged(object sender, RoutedEventArgs e)
+        {
+            var loginPage = (LoginViewModel)DataContext;
+            loginPage.Password = PasswordBox.Password;
         }
     }
 }

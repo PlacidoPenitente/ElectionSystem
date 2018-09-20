@@ -16,8 +16,10 @@ namespace ElectionSystem.ViewModels
             _mainWindow = mainWindowViewModel;
             _createUpdateVoter = new CreateUpdateVoterViewModel(new VoterModel(), this);
             _readVoters = new ReadVotersViewModel(this);
-            CurrentPage = _readVoters;
+            GotoVotersCommand = new DelegateCommand(GotoReadVoters);
         }
+
+        public DelegateCommand GotoVotersCommand { get; }
 
         public IWorkspacePageViewModel CurrentPage
         {
@@ -54,7 +56,7 @@ namespace ElectionSystem.ViewModels
         {
 
         }
-        
+
         public void ShowErrorDialog()
         {
 

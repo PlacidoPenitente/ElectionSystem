@@ -12,7 +12,17 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.Column="0">
-
+            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                <StackPanel>
+                    <Button Content="Voters" Command="{Binding GotoVotersCommand}"/>
+                    <Button Content="Parties"/>
+                    <Button Content="Elections"/>
+                    <Button Content="Positions"/>
+                    <Button Content="Candidacies"/>
+                    <Button Content="Status"/>
+                    <Button Content="Users"/>
+                </StackPanel>
+            </ScrollViewer>
         </Grid>
         <Grid Grid.Column="1">
             <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
