@@ -7,29 +7,33 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="225"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0">
-            <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
-                <StackPanel>
-                    <Button Content="Voters" Command="{Binding GotoVotersCommand}"/>
-                    <Button Content="Parties"/>
-                    <Button Content="Elections"/>
-                    <Button Content="Positions"/>
-                    <Button Content="Candidacies"/>
-                    <Button Content="Status"/>
-                    <Button Content="Users"/>
-                </StackPanel>
-            </ScrollViewer>
-        </Grid>
-        <Grid Grid.Column="1">
-            <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                <ContentControl Content="{Binding CurrentPage, UpdateSourceTrigger=PropertyChanged}"/>
-            </ScrollViewer>
-        </Grid>
-        <Grid Grid.Column="1">
-        </Grid>
+        <Border CornerRadius="10" Margin="10" Padding="10" Background="{StaticResource WetAsphalt}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="225"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                        <StackPanel>
+                            <RadioButton Content="Voters" Command="{Binding GotoVotersCommand}" Style="{StaticResource Menu}"/>
+                            <RadioButton Content="Parties" Style="{StaticResource Menu}"/>
+                            <RadioButton Content="Elections" Style="{StaticResource Menu}"/>
+                            <RadioButton Content="Positions" Style="{StaticResource Menu}"/>
+                            <RadioButton Content="Candidacies" Style="{StaticResource Menu}"/>
+                            <RadioButton Content="Status" Style="{StaticResource Menu}"/>
+                            <RadioButton Content="Users" Style="{StaticResource Menu}"/>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+                        <ContentControl Content="{Binding CurrentPage, UpdateSourceTrigger=PropertyChanged}"/>
+                    </ScrollViewer>
+                </Grid>
+                <Grid Grid.Column="1">
+                </Grid>
+            </Grid>
+        </Border>
     </Grid>
 </UserControl>
