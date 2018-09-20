@@ -7,7 +7,17 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <local:MainWindowViewModel/>
+    </Window.DataContext>
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1">
+            <ContentControl Content="{Binding CurrentPage, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
     </Grid>
 </Window>

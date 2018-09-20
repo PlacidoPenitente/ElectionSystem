@@ -3,8 +3,9 @@ using ElectionSystem.Models;
 
 namespace ElectionSystem.ViewModels
 {
-    public class WorkspaceViewModel : BaseInpc
+    public class WorkspaceViewModel : BaseInpc, IPage
     {
+        private readonly MainWindowViewModel _mainWindow;
         private readonly CreateUpdateVoterViewModel _createUpdateVoter;
         private readonly ReadVotersViewModel _readVoters;
 
@@ -12,8 +13,9 @@ namespace ElectionSystem.ViewModels
 
         private IWorkspacePageViewModel _currentPage;
 
-        public WorkspaceViewModel()
+        public WorkspaceViewModel(MainWindowViewModel mainWindowViewModel)
         {
+            _mainWindow = mainWindowViewModel;
             _createUpdateVoter = new CreateUpdateVoterViewModel(new VoterModel(_voter), this);
             _readVoters = new ReadVotersViewModel();
         }
@@ -27,6 +29,8 @@ namespace ElectionSystem.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        public string Title { get; }
 
         public void GotoCreateUpdateVoter(Voter voter = null)
         {
@@ -43,6 +47,26 @@ namespace ElectionSystem.ViewModels
         }
 
         public void ShowYesNoDialog()
+        {
+
+        }
+
+        public void ShowWaitDialog()
+        {
+
+        }
+        
+        public void ShowErrorDialog()
+        {
+
+        }
+
+        public void ShowSuccessDialog()
+        {
+
+        }
+
+        public void ShowInfoDialog()
         {
 
         }

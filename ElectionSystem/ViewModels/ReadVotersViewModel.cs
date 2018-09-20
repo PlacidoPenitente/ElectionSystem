@@ -3,7 +3,7 @@ using ElectionSystem.Models;
 
 namespace ElectionSystem.ViewModels
 {
-    public class ReadVotersViewModel : BaseWorkspacePageViewModel, IReadViewModel<Voter>, IWorkspacePageViewModel
+    public class ReadVotersViewModel : BaseWorkspacePageViewModel, IReadViewModel<Voter>, IWorkspacePageViewModel, IPage
     {
         private ObservableCollection<Voter> _collection;
         private Voter _selected;

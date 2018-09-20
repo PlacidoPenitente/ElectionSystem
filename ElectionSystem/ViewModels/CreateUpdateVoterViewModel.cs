@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace ElectionSystem.ViewModels
 {
-    public class CreateUpdateVoterViewModel : BaseWorkspacePageViewModel, ICreateUpdateViewModel<VoterModel>, IWorkspacePageViewModel
+    public class CreateUpdateVoterViewModel : BaseWorkspacePageViewModel, ICreateUpdateViewModel<VoterModel>, IWorkspacePageViewModel, IPage
     {
         private string _title;
 

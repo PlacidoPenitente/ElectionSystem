@@ -72,6 +72,7 @@
     <Compile Include="Facades\UserModel.cs" />
     <Compile Include="Facades\VoteModel.cs" />
     <Compile Include="Facades\VoterModel.cs" />
+    <Compile Include="MainWindowViewModel.cs" />
     <Compile Include="Migrations\201809191751278_ReconstructedModels.cs" />
     <Compile Include="Migrations\201809191751278_ReconstructedModels.Designer.cs">
       <DependentUpon>201809191751278_ReconstructedModels.cs</DependentUpon>
@@ -94,10 +95,21 @@
     <Compile Include="ViewModels\BaseWorkspacePageViewModel.cs" />
     <Compile Include="ViewModels\CreateUpdateVoterViewModel.cs" />
     <Compile Include="ViewModels\ICreateUpdateViewModel.cs" />
+    <Compile Include="ViewModels\IPage.cs" />
     <Compile Include="ViewModels\IReadViewModel.cs" />
     <Compile Include="ViewModels\IWorkspacePageViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\ReadVotersViewModel.cs" />
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
+    <Compile Include="Views\LoginView.xaml.cs">
+      <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReadVotersView.xaml.cs">
+      <DependentUpon>ReadVotersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WorkspaceView.xaml.cs">
+      <DependentUpon>WorkspaceView.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -110,6 +122,22 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Resources\DataTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReadVotersView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\WorkspaceView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Migrations\201809170557062_Initial.cs" />
@@ -169,8 +197,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
