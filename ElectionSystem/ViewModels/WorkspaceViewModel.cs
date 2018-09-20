@@ -18,6 +18,7 @@ namespace ElectionSystem.ViewModels
             _mainWindow = mainWindowViewModel;
             _createUpdateVoter = new CreateUpdateVoterViewModel(new VoterModel(_voter), this);
             _readVoters = new ReadVotersViewModel();
+            CurrentPage = _readVoters;
         }
 
         public IWorkspacePageViewModel CurrentPage

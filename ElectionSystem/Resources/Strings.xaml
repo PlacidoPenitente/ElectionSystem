@@ -7,4 +7,7 @@
     </system:String>
 
     <system:String x:Key="LogIn">Log In</system:String>
+    <system:String x:Key="RegisterVoter">Register Voter</system:String>
+    <system:String x:Key="LoadVoters">Load Voters</system:String>
+    <system:String x:Key="SearchVoters">Search</system:String>
 </ResourceDictionary>

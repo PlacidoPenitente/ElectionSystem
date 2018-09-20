@@ -17,4 +17,9 @@
     <DataTemplate DataType="{x:Type viewmodels:ReadVotersViewModel}">
         <views:ReadVotersView/>
     </DataTemplate>
+    
+    <!--RegisterVoters-->
+    <DataTemplate DataType="{x:Type viewmodels:CreateUpdateVoterViewModel}">
+        <views:/>
+    </DataTemplate>
 </ResourceDictionary>
