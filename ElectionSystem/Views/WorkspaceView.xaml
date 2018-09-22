@@ -20,7 +20,7 @@
                             <RadioButton Content="Parties" Style="{StaticResource Menu}" Command="{Binding GotoPartiesCommand}"/>
                             <RadioButton Content="Elections" Style="{StaticResource Menu}" Command="{Binding GotoElectionsCommand}"/>
                             <RadioButton Content="Positions" Style="{StaticResource Menu}" Command="{Binding GotoPositionsCommand}"/>
-                            <RadioButton Content="Candidacies" Style="{StaticResource Menu}"/>
+                            <RadioButton Content="Candidacies" Style="{StaticResource Menu}" Command="{Binding GotoCandidaciesCommand}"/>
                             <RadioButton Content="Vote" Style="{StaticResource Menu}"/>
                             <RadioButton Content="Status" Style="{StaticResource Menu}"/>
                             <RadioButton Content="Users" Style="{StaticResource Menu}" Command="{Binding GotoUsersCommand}"/>

@@ -5,16 +5,17 @@ using ElectionSystem.Models;
 
 namespace ElectionSystem.Converters
 {
-    public class ElectionToStringConverter : IValueConverter
+    public class CandidateToStringConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value.GetType() != typeof(string))
+            if (value.GetType()!=typeof(String))
             {
-                var election = (Election)value;
-                return election.Name;
+                var candidate = (Voter)value;
+                return candidate.LastName + ", " + candidate.FirstName + " " + candidate.MiddleName;
             }
-            return "";
+
+            return value;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

@@ -67,6 +67,16 @@
         <views:DialogView/>
     </DataTemplate>
 
+    <!--ReadCandidaciesView-->
+    <DataTemplate DataType="{x:Type viewmodels:ReadCandidaciesViewModel}">
+        <views:ReadCandidaciesView/>
+    </DataTemplate>
+
+    <!--CreateCandidacy-->
+    <DataTemplate DataType="{x:Type viewmodels:CreateUpdateCandidacyViewModel}">
+        <views:CreateUpdateCandidacyView/>
+    </DataTemplate>
+
     <DataTemplate x:Key="ElectionTemplate">
         <TextBlock Text="{Binding Election.Name}"/>
     </DataTemplate>

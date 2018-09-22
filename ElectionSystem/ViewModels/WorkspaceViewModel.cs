@@ -26,11 +26,14 @@ namespace ElectionSystem.ViewModels
             _readElections = new ReadElectionsViewModel(this);
             _createUpdatePosition = new CreateUpdatePositionViewModel(new PositionModel(), this);
             _readPositions = new ReadPositionsViewModel(this);
+            _createUpdateCandidacy = new CreateUpdateCandidacyViewModel(new CandidacyModel(), this);
+            _readCandidacies = new ReadCandidaciesViewModel(this);
             GotoVotersCommand = new DelegateCommand(GotoReadVoters);
             GotoUsersCommand = new DelegateCommand(GotoReadUsers);
             GotoPartiesCommand = new DelegateCommand(GotoReadParties);
             GotoElectionsCommand = new DelegateCommand(GotoReadElections);
             GotoPositionsCommand = new DelegateCommand(GotoReadPositions);
+            GotoCandidaciesCommand = new DelegateCommand(GotoReadCandidacies);
         }
 
         public DelegateCommand GotoUsersCommand { get; }
@@ -92,6 +95,38 @@ namespace ElectionSystem.ViewModels
         {
             _readPositions.Read();
             CurrentPage = _readPositions;
+        }
+
+        private readonly CreateUpdateCandidacyViewModel _createUpdateCandidacy;
+        private readonly ReadCandidaciesViewModel _readCandidacies;
+
+        public DelegateCommand GotoCandidaciesCommand { get; }
+
+        public void GotoCreateUpdateCandidacy(Candidacy candidacy = null)
+        {
+            _createUpdateCandidacy.UpdateValues();
+            _createUpdateCandidacy.Election =
+                _createUpdateCandidacy.Elections.Single(election => election.Id == candidacy.Position.Election.Id);
+            _createUpdateCandidacy.Title = "Update Candidacy";
+            if (candidacy == null) _createUpdateCandidacy.Title = "Create New Candidacy";
+            if (candidacy == null) _createUpdateCandidacy.Model.Candidacy = new Candidacy();
+            else
+            {
+                _createUpdateCandidacy.Model.Candidacy = candidacy;
+                _createUpdateCandidacy.Model.Candidate =
+                    _createUpdateCandidacy.Candidates.Single(election => election.Id == candidacy.Candidate.Id);
+                _createUpdateCandidacy.Model.Party =
+                    _createUpdateCandidacy.Parties.Single(party => party.Id == candidacy.Party.Id);
+                _createUpdateCandidacy.Model.Position =
+                    _createUpdateCandidacy.Positions.Single(position => position.Id == candidacy.Position.Id);
+            }
+            CurrentPage = _createUpdateCandidacy;
+        }
+
+        public void GotoReadCandidacies()
+        {
+            _readCandidacies.Read();
+            CurrentPage = _readCandidacies;
         }
 
         private readonly CreateUpdateElectionViewModel _createUpdateElection;

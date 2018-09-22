@@ -5,4 +5,8 @@
     <converters:IntegerToAccountTypeConverter x:Key="IntegerToAccountType"/>
     <converters:DateTimeToStringConverter x:Key="DateTimeToString"/>
     <converters:ElectionToStringConverter x:Key="ElectionToString"/>
+    <converters:PartyToStringConverter x:Key="PartyToString"/>
+    <converters:PositionToStringConverter x:Key="PositionToString"/>
+    <converters:CandidateToStringConverter x:Key="CandidateToString"/>
+    <converters:PositionToElectionNameConverter x:Key="PositionToElectionName"/>
 </ResourceDictionary>

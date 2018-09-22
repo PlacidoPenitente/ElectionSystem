@@ -1,20 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Data;
 using ElectionSystem.Models;
 
 namespace ElectionSystem.Converters
 {
-    public class ElectionToStringConverter : IValueConverter
+    class PositionToStringConverter : IValueConverter
     {
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if (value.GetType() != typeof(string))
-            {
-                var election = (Election)value;
-                return election.Name;
-            }
-            return "";
+            var position = (Position)value;
+            if (position == null) return "";
+            return position.Name;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

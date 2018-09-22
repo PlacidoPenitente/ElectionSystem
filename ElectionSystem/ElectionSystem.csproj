@@ -67,10 +67,14 @@
     </ApplicationDefinition>
     <Compile Include="AttachedProperties.cs" />
     <Compile Include="BaseInpc.cs" />
+    <Compile Include="Converters\CandidateToStringConverter.cs" />
     <Compile Include="Converters\DateTimeToStringConverter.cs" />
     <Compile Include="Converters\ElectionToStringConverter.cs" />
     <Compile Include="Converters\IntegerToAccountTypeConverter.cs" />
     <Compile Include="Converters\IntegerToGenderConverter.cs" />
+    <Compile Include="Converters\PartyToStringConverter.cs" />
+    <Compile Include="Converters\PositionToElectionNameConverter.cs" />
+    <Compile Include="Converters\PositionToStringConverter.cs" />
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="Facades\BallotModel.cs" />
     <Compile Include="Facades\CandidacyModel.cs" />
@@ -104,6 +108,7 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Vote.cs" />
     <Compile Include="ViewModels\BaseWorkspacePageViewModel.cs" />
+    <Compile Include="ViewModels\CreateUpdateCandidacyViewModel.cs" />
     <Compile Include="ViewModels\CreateUpdateElectionViewModel.cs" />
     <Compile Include="ViewModels\CreateUpdatePartyViewModel.cs" />
     <Compile Include="ViewModels\CreateUpdatePositionViewModel.cs" />
@@ -115,12 +120,16 @@
     <Compile Include="ViewModels\IReadViewModel.cs" />
     <Compile Include="ViewModels\IWorkspacePageViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\ReadCandidaciesViewModel.cs" />
     <Compile Include="ViewModels\ReadElectionsViewModel.cs" />
     <Compile Include="ViewModels\ReadPartiesViewModel.cs" />
     <Compile Include="ViewModels\ReadPositionsViewModel.cs" />
     <Compile Include="ViewModels\ReadUsersViewModel.cs" />
     <Compile Include="ViewModels\ReadVotersViewModel.cs" />
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
+    <Compile Include="Views\CreateUpdateCandidacyView.xaml.cs">
+      <DependentUpon>CreateUpdateCandidacyView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CreateUpdateElectionView.xaml.cs">
       <DependentUpon>CreateUpdateElectionView.xaml</DependentUpon>
     </Compile>
@@ -141,6 +150,9 @@
     </Compile>
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReadCandidaciesView.xaml.cs">
+      <DependentUpon>ReadCandidaciesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ReadElectionsView.xaml.cs">
       <DependentUpon>ReadElectionsView.xaml</DependentUpon>
@@ -216,6 +228,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\CreateUpdateCandidacyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CreateUpdateElectionView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -241,6 +257,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReadCandidaciesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
