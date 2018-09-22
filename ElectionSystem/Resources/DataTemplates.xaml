@@ -42,6 +42,16 @@
         <views:CreateUpdatePartyView/>
     </DataTemplate>
 
+    <!--ReadElectionsView-->
+    <DataTemplate DataType="{x:Type viewmodels:ReadElectionsViewModel}">
+        <views:ReadElectionsView/>
+    </DataTemplate>
+
+    <!--RegisterElections-->
+    <DataTemplate DataType="{x:Type viewmodels:CreateUpdateElectionViewModel}">
+        <views:CreateUpdateElectionView/>
+    </DataTemplate>
+
     <!--Dialog-->
     <DataTemplate DataType="{x:Type viewmodels:DialogViewModel}">
         <views:DialogView/>

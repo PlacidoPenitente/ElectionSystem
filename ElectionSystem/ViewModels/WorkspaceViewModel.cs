@@ -23,14 +23,18 @@ namespace ElectionSystem.ViewModels
             _readUsers = new ReadUsersViewModel(this);
             _createUpdateParty = new CreateUpdatePartyViewModel(new PartyModel(), this);
             _readParties = new ReadPartiesViewModel(this);
+            _createUpdateElection = new CreateUpdateElectionViewModel(new ElectionModel(), this);
+            _readElections = new ReadElectionsViewModel(this);
             GotoVotersCommand = new DelegateCommand(GotoReadVoters);
             GotoUsersCommand = new DelegateCommand(GotoReadUsers);
             GotoPartiesCommand = new DelegateCommand(GotoReadParties);
+            GotoElectionsCommand = new DelegateCommand(GotoReadElections);
         }
 
         public DelegateCommand GotoVotersCommand { get; }
         public DelegateCommand GotoUsersCommand { get; }
         public DelegateCommand GotoPartiesCommand { get; }
+        public DelegateCommand GotoElectionsCommand { get; }
 
         public IWorkspacePageViewModel CurrentPage
         {
@@ -61,13 +65,30 @@ namespace ElectionSystem.ViewModels
             CurrentPage = _readVoters;
         }
 
+        private readonly CreateUpdateElectionViewModel _createUpdateElection;
+        private readonly ReadElectionsViewModel _readElections;
+
+        public void GotoCreateUpdateElection(Election election = null)
+        {
+            _createUpdateElection.Title = "Update Election";
+            if (election == null) _createUpdateElection.Title = "Register New Election";
+            _createUpdateElection.Model.Election = election ?? new Election();
+            CurrentPage = _createUpdateElection;
+        }
+
+        public void GotoReadElections()
+        {
+            _readElections.Read();
+            CurrentPage = _readElections;
+        }
+
         private readonly CreateUpdatePartyViewModel _createUpdateParty;
         private readonly ReadPartiesViewModel _readParties;
 
         public void GotoCreateUpdateParty(Party party = null)
         {
             _createUpdateParty.Title = "Update Party";
-            if (party == null) _createUpdateParty.Title = "Register New Party";
+            if (party == null) _createUpdateParty.Title = "Create New Party";
             _createUpdateParty.Model.Party = party ?? new Party();
             CurrentPage = _createUpdateParty;
         }
@@ -81,7 +102,7 @@ namespace ElectionSystem.ViewModels
         public void GotoCreateUpdateUser(User user = null)
         {
             _createUpdateVoter.Title = "Update User";
-            if (user == null) _createUpdateVoter.Title = "Register New User";
+            if (user == null) _createUpdateVoter.Title = "Create New User";
             _createUpdateUser.Model.User = user ?? new User();
             CurrentPage = _createUpdateUser;
         }
