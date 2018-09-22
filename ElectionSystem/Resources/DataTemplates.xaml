@@ -52,8 +52,22 @@
         <views:CreateUpdateElectionView/>
     </DataTemplate>
 
+    <!--ReadPositionsView-->
+    <DataTemplate DataType="{x:Type viewmodels:ReadPositionsViewModel}">
+        <views:ReadPositionsView/>
+    </DataTemplate>
+
+    <!--RegisterPositions-->
+    <DataTemplate DataType="{x:Type viewmodels:CreateUpdatePositionViewModel}">
+        <views:CreateUpdatePositionView/>
+    </DataTemplate>
+
     <!--Dialog-->
     <DataTemplate DataType="{x:Type viewmodels:DialogViewModel}">
         <views:DialogView/>
+    </DataTemplate>
+
+    <DataTemplate x:Key="ElectionTemplate">
+        <TextBlock Text="{Binding Election.Name}"/>
     </DataTemplate>
 </ResourceDictionary>

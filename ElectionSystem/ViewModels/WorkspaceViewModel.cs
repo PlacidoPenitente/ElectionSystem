@@ -1,4 +1,5 @@
-﻿using ElectionSystem.Facades;
+﻿using System.Linq;
+using ElectionSystem.Facades;
 using ElectionSystem.Models;
 
 namespace ElectionSystem.ViewModels
@@ -9,8 +10,6 @@ namespace ElectionSystem.ViewModels
 
         private readonly CreateUpdateUserViewModel _createUpdateUser;
         private readonly ReadUsersViewModel _readUsers;
-
-
 
         private IWorkspacePageViewModel _currentPage;
 
@@ -25,13 +24,15 @@ namespace ElectionSystem.ViewModels
             _readParties = new ReadPartiesViewModel(this);
             _createUpdateElection = new CreateUpdateElectionViewModel(new ElectionModel(), this);
             _readElections = new ReadElectionsViewModel(this);
+            _createUpdatePosition = new CreateUpdatePositionViewModel(new PositionModel(), this);
+            _readPositions = new ReadPositionsViewModel(this);
             GotoVotersCommand = new DelegateCommand(GotoReadVoters);
             GotoUsersCommand = new DelegateCommand(GotoReadUsers);
             GotoPartiesCommand = new DelegateCommand(GotoReadParties);
             GotoElectionsCommand = new DelegateCommand(GotoReadElections);
+            GotoPositionsCommand = new DelegateCommand(GotoReadPositions);
         }
 
-        public DelegateCommand GotoVotersCommand { get; }
         public DelegateCommand GotoUsersCommand { get; }
         public DelegateCommand GotoPartiesCommand { get; }
         public DelegateCommand GotoElectionsCommand { get; }
@@ -47,9 +48,11 @@ namespace ElectionSystem.ViewModels
         }
 
         public string Title { get; }
-        
+
         private readonly CreateUpdateVoterViewModel _createUpdateVoter;
         private readonly ReadVotersViewModel _readVoters;
+
+        public DelegateCommand GotoVotersCommand { get; }
 
         public void GotoCreateUpdateVoter(Voter voter = null)
         {
@@ -63,6 +66,32 @@ namespace ElectionSystem.ViewModels
         {
             _readVoters.Read();
             CurrentPage = _readVoters;
+        }
+
+        private readonly CreateUpdatePositionViewModel _createUpdatePosition;
+        private readonly ReadPositionsViewModel _readPositions;
+
+        public DelegateCommand GotoPositionsCommand { get; }
+
+        public void GotoCreateUpdatePosition(Position position = null)
+        {
+            _createUpdatePosition.UpdateElections();
+            _createUpdatePosition.Title = "Update Position";
+            if (position == null) _createUpdatePosition.Title = "Create New Position";
+            if (position == null) _createUpdatePosition.Model.Position = new Position();
+            else
+            {
+                _createUpdatePosition.Model.Position = position;
+                _createUpdatePosition.Model.Election =
+                _createUpdatePosition.Elections.Single(election => election.Id == position.Election.Id);
+            }
+            CurrentPage = _createUpdatePosition;
+        }
+
+        public void GotoReadPositions()
+        {
+            _readPositions.Read();
+            CurrentPage = _readPositions;
         }
 
         private readonly CreateUpdateElectionViewModel _createUpdateElection;

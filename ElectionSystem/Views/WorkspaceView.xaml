@@ -19,8 +19,9 @@
                             <RadioButton Margin="0,10,0,0" Content="Voters" Command="{Binding GotoVotersCommand}" Style="{StaticResource Menu}"/>
                             <RadioButton Content="Parties" Style="{StaticResource Menu}" Command="{Binding GotoPartiesCommand}"/>
                             <RadioButton Content="Elections" Style="{StaticResource Menu}" Command="{Binding GotoElectionsCommand}"/>
-                            <RadioButton Content="Positions" Style="{StaticResource Menu}"/>
+                            <RadioButton Content="Positions" Style="{StaticResource Menu}" Command="{Binding GotoPositionsCommand}"/>
                             <RadioButton Content="Candidacies" Style="{StaticResource Menu}"/>
+                            <RadioButton Content="Vote" Style="{StaticResource Menu}"/>
                             <RadioButton Content="Status" Style="{StaticResource Menu}"/>
                             <RadioButton Content="Users" Style="{StaticResource Menu}" Command="{Binding GotoUsersCommand}"/>
                         </StackPanel>

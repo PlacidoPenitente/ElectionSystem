@@ -4,4 +4,5 @@
     <converters:IntegerToGenderConverter x:Key="IntegerToGender"/>
     <converters:IntegerToAccountTypeConverter x:Key="IntegerToAccountType"/>
     <converters:DateTimeToStringConverter x:Key="DateTimeToString"/>
+    <converters:ElectionToStringConverter x:Key="ElectionToString"/>
 </ResourceDictionary>
