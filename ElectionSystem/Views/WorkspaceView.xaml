@@ -16,7 +16,7 @@
                 <Grid Grid.Column="0">
                     <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
                         <StackPanel>
-                            <RadioButton Content="Voters" Command="{Binding GotoVotersCommand}" Style="{StaticResource Menu}"/>
+                            <RadioButton Margin="0,10,0,0" Content="Voters" Command="{Binding GotoVotersCommand}" Style="{StaticResource Menu}"/>
                             <RadioButton Content="Parties" Style="{StaticResource Menu}"/>
                             <RadioButton Content="Elections" Style="{StaticResource Menu}"/>
                             <RadioButton Content="Positions" Style="{StaticResource Menu}"/>
@@ -27,7 +27,7 @@
                     </ScrollViewer>
                 </Grid>
                 <Grid Grid.Column="1">
-                    <Border BorderThickness="2" BorderBrush="{StaticResource Turquoise}">
+                    <Border>
                         <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                             <ContentControl Content="{Binding CurrentPage, UpdateSourceTrigger=PropertyChanged}"/>
                         </ScrollViewer>

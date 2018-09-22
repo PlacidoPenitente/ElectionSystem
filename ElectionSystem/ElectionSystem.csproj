@@ -67,6 +67,7 @@
     </ApplicationDefinition>
     <Compile Include="AttachedProperties.cs" />
     <Compile Include="BaseInpc.cs" />
+    <Compile Include="Converters\DateTimeToStringConverter.cs" />
     <Compile Include="Converters\IntegerToGenderConverter.cs" />
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="Facades\BallotModel.cs" />
@@ -146,6 +147,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Resources\Converters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\DataGridStyles.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
