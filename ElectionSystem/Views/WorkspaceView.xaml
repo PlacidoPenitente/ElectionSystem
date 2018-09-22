@@ -22,7 +22,7 @@
                             <RadioButton Content="Positions" Style="{StaticResource Menu}"/>
                             <RadioButton Content="Candidacies" Style="{StaticResource Menu}"/>
                             <RadioButton Content="Status" Style="{StaticResource Menu}"/>
-                            <RadioButton Content="Users" Style="{StaticResource Menu}"/>
+                            <RadioButton Content="Users" Style="{StaticResource Menu}" Command="{Binding GotoUsersCommand}"/>
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>

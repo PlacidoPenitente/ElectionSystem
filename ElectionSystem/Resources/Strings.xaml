@@ -19,4 +19,6 @@
     <system:String x:Key="Cancel">Cancel</system:String>
     <system:String x:Key="Edit">Edit</system:String>
     <system:String x:Key="Delete">Delete</system:String>
+    <system:String x:Key="Username">Username:</system:String>
+    <system:String x:Key="Password">Password:</system:String>
 </ResourceDictionary>

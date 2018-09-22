@@ -9,6 +9,9 @@ namespace ElectionSystem.ViewModels
         private readonly CreateUpdateVoterViewModel _createUpdateVoter;
         private readonly ReadVotersViewModel _readVoters;
 
+        private readonly CreateUpdateUserViewModel _createUpdateUser;
+        private readonly ReadUsersViewModel _readUsers;
+
         private IWorkspacePageViewModel _currentPage;
 
         public WorkspaceViewModel(MainWindowViewModel mainWindowViewModel)
@@ -16,10 +19,14 @@ namespace ElectionSystem.ViewModels
             _mainWindow = mainWindowViewModel;
             _createUpdateVoter = new CreateUpdateVoterViewModel(new VoterModel(), this);
             _readVoters = new ReadVotersViewModel(this);
+            _createUpdateUser = new CreateUpdateUserViewModel(new UserModel(), this);
+            _readUsers = new ReadUsersViewModel(this);
             GotoVotersCommand = new DelegateCommand(GotoReadVoters);
+            GotoUsersCommand = new DelegateCommand(GotoReadUsers);
         }
 
         public DelegateCommand GotoVotersCommand { get; }
+        public DelegateCommand GotoUsersCommand { get; }
 
         public IWorkspacePageViewModel CurrentPage
         {
@@ -45,6 +52,20 @@ namespace ElectionSystem.ViewModels
         {
             _readVoters.Read();
             CurrentPage = _readVoters;
+        }
+
+        public void GotoCreateUpdateUser(User user = null)
+        {
+            _createUpdateVoter.Title = "Update User";
+            if (user == null) _createUpdateVoter.Title = "Register New User";
+            _createUpdateUser.Model.User = user ?? new User();
+            CurrentPage = _createUpdateUser;
+        }
+
+        public void GotoReadUsers()
+        {
+            _readUsers.Read();
+            CurrentPage = _readUsers;
         }
 
         private DialogViewModel _dialog;

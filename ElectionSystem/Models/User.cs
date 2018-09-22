@@ -5,7 +5,7 @@ namespace ElectionSystem.Models
 {
     public sealed class User
     {
-        public int Id { get; set; }
+        public int Id { get; set; } = -1;
         [Required]
         [DataType(DataType.Password)]
         [MaxLength(64)]

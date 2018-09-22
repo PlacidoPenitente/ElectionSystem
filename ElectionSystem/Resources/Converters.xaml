@@ -2,5 +2,6 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:converters="clr-namespace:ElectionSystem.Converters">
     <converters:IntegerToGenderConverter x:Key="IntegerToGender"/>
+    <converters:IntegerToAccountTypeConverter x:Key="IntegerToAccountType"/>
     <converters:DateTimeToStringConverter x:Key="DateTimeToString"/>
 </ResourceDictionary>

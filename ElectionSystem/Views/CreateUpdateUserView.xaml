@@ -1,11 +1,12 @@
-﻿<UserControl x:Class="ElectionSystem.Views.CreateUpdateVoterView"
+﻿<UserControl x:Class="ElectionSystem.Views.CreateUpdateUserView"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:ElectionSystem"
+             xmlns:local="clr-namespace:ElectionSystem.Views"
+             xmlns:electionSystem="clr-namespace:ElectionSystem"
              mc:Ignorable="d" 
-             d:DesignHeight="900" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Border CornerRadius="10" BorderThickness="1" BorderBrush="{StaticResource Turquoise}" Background="{StaticResource MidnightBlue}">
             <Grid>
@@ -18,15 +19,12 @@
                 </Grid>
                 <Grid Grid.Row="1">
                     <StackPanel Width="300" VerticalAlignment="Center">
-                        <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterFirstName}"/>
-                        <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.MiddleName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterMiddleName}"/>
-                        <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterLastName}"/>
-                        <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.Birthdate, Mode=TwoWay, UpdateSourceTrigger=LostFocus, Converter={StaticResource DateTimeToString}}" local:AttachedProperties.Label="{StaticResource VoterBirthdate}"/>
-                        <ComboBox Style="{StaticResource ComboBox}" SelectedIndex="{Binding Model.Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource IntegerToGender}}" local:AttachedProperties.Label="{StaticResource VoterGender}">
-                            <ComboBoxItem Content="Male"/>
-                            <ComboBoxItem Content="Female"/>
+                        <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" electionSystem:AttachedProperties.Label="{StaticResource Username}"/>
+                        <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" electionSystem:AttachedProperties.Label="{StaticResource Password}"/>
+                        <ComboBox Style="{StaticResource ComboBox}" SelectedIndex="{Binding Model.AccountType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource IntegerToAccountType}}" electionSystem:AttachedProperties.Label="Account Type:">
+                            <ComboBoxItem Content="Standard"/>
+                            <ComboBoxItem Content="Administrator"/>
                         </ComboBox>
-                        <TextBox TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" MaxLines="5" MinLines="5" Style="{StaticResource TextBox}" Text="{Binding Model.Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterAddress}"/>
                         <Grid>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*"/>

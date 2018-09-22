@@ -22,6 +22,16 @@
         <views:CreateUpdateVoterView/>
     </DataTemplate>
 
+    <!--ReadUsersView-->
+    <DataTemplate DataType="{x:Type viewmodels:ReadUsersViewModel}">
+        <views:ReadUsersView/>
+    </DataTemplate>
+
+    <!--CreateUser-->
+    <DataTemplate DataType="{x:Type viewmodels:CreateUpdateUserViewModel}">
+        <views:CreateUpdateUserView/>
+    </DataTemplate>
+
     <!--Dialog-->
     <DataTemplate DataType="{x:Type viewmodels:DialogViewModel}">
         <views:DialogView/>

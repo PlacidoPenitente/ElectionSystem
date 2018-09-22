@@ -5,13 +5,13 @@ using System.Windows;
 
 namespace ElectionSystem.ViewModels
 {
-    public class CreateUpdateVoterViewModel : BaseWorkspacePageViewModel, ICreateUpdateViewModel<VoterModel>, IWorkspacePageViewModel, IPage
+    public class CreateUpdateUserViewModel : BaseWorkspacePageViewModel, ICreateUpdateViewModel<UserModel>, IWorkspacePageViewModel, IPage
     {
         private string _title;
 
-        public CreateUpdateVoterViewModel(VoterModel voterModel, WorkspaceViewModel workspaceViewModel)
+        public CreateUpdateUserViewModel(UserModel userModel, WorkspaceViewModel workspaceViewModel)
         {
-            Model = voterModel;
+            Model = userModel;
             Workspace = workspaceViewModel;
             SaveCommand = new DelegateCommand(Save);
             CancelCommand = new DelegateCommand(Cancel);
@@ -27,21 +27,21 @@ namespace ElectionSystem.ViewModels
             }
         }
         public WorkspaceViewModel Workspace { get; }
-        public VoterModel Model { get; }
+        public UserModel Model { get; }
         public DelegateCommand SaveCommand { get; }
         public DelegateCommand CancelCommand { get; }
 
         public void Cancel()
         {
-            Workspace.GotoReadVoters();
+            Workspace.GotoReadUsers();
         }
 
         public void Save()
         {
             Workspace.Dialog = new DialogViewModel
             {
-                Title = "Save Voter",
-                Message = "Are you sure yo want to save this voter?",
+                Title = "Save User",
+                Message = "Are you sure yo want to save this user?",
                 YesVisibility = Visibility.Visible,
                 YesCommand = new DelegateCommand(ContinueSave),
                 NoVisibility = Visibility.Visible,
@@ -57,13 +57,13 @@ namespace ElectionSystem.ViewModels
 
         private void ContinueSave()
         {
-            if (DbContext.Voters.AsQueryable().Any(voter => voter.Id == Model.Voter.Id))
-                DbContext.Entry(Model.Voter).State = EntityState.Modified;
+            if (DbContext.User.AsQueryable().Any(user => user.Id == Model.User.Id))
+                DbContext.Entry(Model.User).State = EntityState.Modified;
             else
-                DbContext.Voters.Add(Model.Voter);
+                DbContext.User.Add(Model.User);
             DbContext.SaveChanges();
             HideDialog();
-            Workspace.GotoReadVoters();
+            Workspace.GotoReadUsers();
         }
     }
 }

@@ -68,6 +68,7 @@
     <Compile Include="AttachedProperties.cs" />
     <Compile Include="BaseInpc.cs" />
     <Compile Include="Converters\DateTimeToStringConverter.cs" />
+    <Compile Include="Converters\IntegerToAccountTypeConverter.cs" />
     <Compile Include="Converters\IntegerToGenderConverter.cs" />
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="Facades\BallotModel.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Vote.cs" />
     <Compile Include="ViewModels\BaseWorkspacePageViewModel.cs" />
+    <Compile Include="ViewModels\CreateUpdateUserViewModel.cs" />
     <Compile Include="ViewModels\CreateUpdateVoterViewModel.cs" />
     <Compile Include="ViewModels\DialogViewModel.cs" />
     <Compile Include="ViewModels\ICreateUpdateViewModel.cs" />
@@ -109,8 +111,12 @@
     <Compile Include="ViewModels\IReadViewModel.cs" />
     <Compile Include="ViewModels\IWorkspacePageViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\ReadUsersViewModel.cs" />
     <Compile Include="ViewModels\ReadVotersViewModel.cs" />
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
+    <Compile Include="Views\CreateUpdateUserView.xaml.cs">
+      <DependentUpon>CreateUpdateUserView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CreateUpdateVoterView.xaml.cs">
       <DependentUpon>CreateUpdateVoterView.xaml</DependentUpon>
     </Compile>
@@ -119,6 +125,9 @@
     </Compile>
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReadUsersView.xaml.cs">
+      <DependentUpon>ReadUsersView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ReadVotersView.xaml.cs">
       <DependentUpon>ReadVotersView.xaml</DependentUpon>
@@ -182,6 +191,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\CreateUpdateUserView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CreateUpdateVoterView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -191,6 +204,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReadUsersView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
