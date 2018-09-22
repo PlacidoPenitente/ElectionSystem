@@ -34,6 +34,7 @@
                     </Border>
                 </Grid>
                 <Grid Grid.Column="1">
+                    <ContentControl Content="{Binding Dialog, UpdateSourceTrigger=PropertyChanged}"/>
                 </Grid>
             </Grid>
         </Border>

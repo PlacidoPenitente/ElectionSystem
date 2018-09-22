@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="ElectionSystem.Views.DialogView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ElectionSystem.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Border CornerRadius="10">
+            <Border.Background>
+                <SolidColorBrush Color="{StaticResource AsbestosColor}" Opacity="0.75"/>
+            </Border.Background>
+            <Border Width="500" Height="200" Background="{StaticResource Amethyst}">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Border Background="{StaticResource Wisteria}">
+                        <TextBlock Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center" Margin="10" FontFamily="{StaticResource Roboto}" Foreground="{StaticResource Clouds}" FontSize="17"/>
+                    </Border>
+                    <Grid Grid.Row="1">
+                        <TextBlock Text="{Binding Message, UpdateSourceTrigger=PropertyChanged}" FontFamily="{StaticResource RobotoLight}" FontSize="15" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{StaticResource Clouds}" Margin="20"/>
+                    </Grid>
+                    <Border Height="Auto" Grid.Row="2" Background="{StaticResource Wisteria}">
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                            <Button Visibility="{Binding YesVisibility, UpdateSourceTrigger=PropertyChanged}" Content="Yes" Command="{Binding YesCommand}" Width="75" Style="{StaticResource ButtonSecondary}"/>
+                            <Button Visibility="{Binding NoVisibility, UpdateSourceTrigger=PropertyChanged}" Content="No" Command="{Binding NoCommand}" Width="75" Style="{StaticResource ButtonWarning}"/>
+                            <Button Visibility="{Binding OkVisibility, UpdateSourceTrigger=PropertyChanged}" Content="Ok" Command="{Binding OkCommand}" Width="75" Style="{StaticResource ButtonWarning}"/>
+                        </StackPanel>
+                    </Border>
+                </Grid>
+            </Border>
+        </Border>
+    </Grid>
+</UserControl>

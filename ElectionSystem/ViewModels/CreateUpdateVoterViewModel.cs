@@ -1,6 +1,7 @@
 ﻿using ElectionSystem.Facades;
 using System.Data.Entity;
 using System.Linq;
+using System.Windows;
 
 namespace ElectionSystem.ViewModels
 {
@@ -37,11 +38,31 @@ namespace ElectionSystem.ViewModels
 
         public void Save()
         {
+            Workspace.Dialog = new DialogViewModel
+            {
+                Title = "Save Voter",
+                Message = "Are you sure yo want to save this voter?",
+                YesVisibility = Visibility.Visible,
+                YesCommand = new DelegateCommand(ContinueSave),
+                NoVisibility = Visibility.Visible,
+                NoCommand = new DelegateCommand(HideDialog),
+                OkVisibility = Visibility.Collapsed
+            };
+        }
+
+        private void HideDialog()
+        {
+            Workspace.Dialog = null;
+        }
+
+        private void ContinueSave()
+        {
             if (DbContext.Voters.AsQueryable().Any(voter => voter.Id == Model.Voter.Id))
                 DbContext.Entry(Model.Voter).State = EntityState.Modified;
             else
                 DbContext.Voters.Add(Model.Voter);
             DbContext.SaveChanges();
+            HideDialog();
             Workspace.GotoReadVoters();
         }
     }

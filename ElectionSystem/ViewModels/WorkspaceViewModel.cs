@@ -47,6 +47,18 @@ namespace ElectionSystem.ViewModels
             CurrentPage = _readVoters;
         }
 
+        private DialogViewModel _dialog;
+
+        public DialogViewModel Dialog
+        {
+            get => _dialog;
+            set
+            {
+                _dialog = value;
+                OnPropertyChanged();
+            }
+        }
+
         public void ShowYesNoDialog()
         {
 

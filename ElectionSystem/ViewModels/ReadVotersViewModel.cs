@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Windows;
 using ElectionSystem.Models;
 
 namespace ElectionSystem.ViewModels
@@ -79,10 +80,30 @@ namespace ElectionSystem.ViewModels
         }
 
         public void Delete()
-        {  
+        {
+            Workspace.Dialog = new DialogViewModel
+            {
+                Title = "Delete Voter",
+                Message = "Are you sure yo want to delete this voter?",
+                YesVisibility = Visibility.Visible,
+                YesCommand = new DelegateCommand(ContinueDelete),
+                NoVisibility = Visibility.Visible,
+                NoCommand = new DelegateCommand(HideDialog),
+                OkVisibility = Visibility.Collapsed
+            };
+        }
+
+        private void ContinueDelete()
+        {
             DbContext.Voters.Remove(Selected);
             DbContext.SaveChanges();
             Read();
+            HideDialog();
+        }
+
+        private void HideDialog()
+        {
+            Workspace.Dialog = null;
         }
 
         public void Search()

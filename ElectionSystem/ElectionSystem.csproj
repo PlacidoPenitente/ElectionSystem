@@ -103,6 +103,7 @@
     <Compile Include="Models\Vote.cs" />
     <Compile Include="ViewModels\BaseWorkspacePageViewModel.cs" />
     <Compile Include="ViewModels\CreateUpdateVoterViewModel.cs" />
+    <Compile Include="ViewModels\DialogViewModel.cs" />
     <Compile Include="ViewModels\ICreateUpdateViewModel.cs" />
     <Compile Include="ViewModels\IPage.cs" />
     <Compile Include="ViewModels\IReadViewModel.cs" />
@@ -112,6 +113,9 @@
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
     <Compile Include="Views\CreateUpdateVoterView.xaml.cs">
       <DependentUpon>CreateUpdateVoterView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DialogView.xaml.cs">
+      <DependentUpon>DialogView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
@@ -179,6 +183,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\CreateUpdateVoterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\DialogView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

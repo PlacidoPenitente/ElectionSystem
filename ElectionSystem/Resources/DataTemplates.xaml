@@ -21,4 +21,9 @@
     <DataTemplate DataType="{x:Type viewmodels:CreateUpdateVoterViewModel}">
         <views:CreateUpdateVoterView/>
     </DataTemplate>
+
+    <!--Dialog-->
+    <DataTemplate DataType="{x:Type viewmodels:DialogViewModel}">
+        <views:DialogView/>
+    </DataTemplate>
 </ResourceDictionary>
