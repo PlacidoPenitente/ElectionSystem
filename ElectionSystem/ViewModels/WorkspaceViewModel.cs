@@ -6,11 +6,11 @@ namespace ElectionSystem.ViewModels
     public class WorkspaceViewModel : BaseInpc, IPage
     {
         private readonly MainWindowViewModel _mainWindow;
-        private readonly CreateUpdateVoterViewModel _createUpdateVoter;
-        private readonly ReadVotersViewModel _readVoters;
 
         private readonly CreateUpdateUserViewModel _createUpdateUser;
         private readonly ReadUsersViewModel _readUsers;
+
+
 
         private IWorkspacePageViewModel _currentPage;
 
@@ -21,12 +21,16 @@ namespace ElectionSystem.ViewModels
             _readVoters = new ReadVotersViewModel(this);
             _createUpdateUser = new CreateUpdateUserViewModel(new UserModel(), this);
             _readUsers = new ReadUsersViewModel(this);
+            _createUpdateParty = new CreateUpdatePartyViewModel(new PartyModel(), this);
+            _readParties = new ReadPartiesViewModel(this);
             GotoVotersCommand = new DelegateCommand(GotoReadVoters);
             GotoUsersCommand = new DelegateCommand(GotoReadUsers);
+            GotoPartiesCommand = new DelegateCommand(GotoReadParties);
         }
 
         public DelegateCommand GotoVotersCommand { get; }
         public DelegateCommand GotoUsersCommand { get; }
+        public DelegateCommand GotoPartiesCommand { get; }
 
         public IWorkspacePageViewModel CurrentPage
         {
@@ -39,6 +43,9 @@ namespace ElectionSystem.ViewModels
         }
 
         public string Title { get; }
+        
+        private readonly CreateUpdateVoterViewModel _createUpdateVoter;
+        private readonly ReadVotersViewModel _readVoters;
 
         public void GotoCreateUpdateVoter(Voter voter = null)
         {
@@ -52,6 +59,23 @@ namespace ElectionSystem.ViewModels
         {
             _readVoters.Read();
             CurrentPage = _readVoters;
+        }
+
+        private readonly CreateUpdatePartyViewModel _createUpdateParty;
+        private readonly ReadPartiesViewModel _readParties;
+
+        public void GotoCreateUpdateParty(Party party = null)
+        {
+            _createUpdateParty.Title = "Update Party";
+            if (party == null) _createUpdateParty.Title = "Register New Party";
+            _createUpdateParty.Model.Party = party ?? new Party();
+            CurrentPage = _createUpdateParty;
+        }
+
+        public void GotoReadParties()
+        {
+            _readParties.Read();
+            CurrentPage = _readParties;
         }
 
         public void GotoCreateUpdateUser(User user = null)

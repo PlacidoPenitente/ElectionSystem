@@ -103,6 +103,7 @@
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\Vote.cs" />
     <Compile Include="ViewModels\BaseWorkspacePageViewModel.cs" />
+    <Compile Include="ViewModels\CreateUpdatePartyViewModel.cs" />
     <Compile Include="ViewModels\CreateUpdateUserViewModel.cs" />
     <Compile Include="ViewModels\CreateUpdateVoterViewModel.cs" />
     <Compile Include="ViewModels\DialogViewModel.cs" />
@@ -111,9 +112,13 @@
     <Compile Include="ViewModels\IReadViewModel.cs" />
     <Compile Include="ViewModels\IWorkspacePageViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\ReadPartiesViewModel.cs" />
     <Compile Include="ViewModels\ReadUsersViewModel.cs" />
     <Compile Include="ViewModels\ReadVotersViewModel.cs" />
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
+    <Compile Include="Views\CreateUpdatePartyView.xaml.cs">
+      <DependentUpon>CreateUpdatePartyView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\CreateUpdateUserView.xaml.cs">
       <DependentUpon>CreateUpdateUserView.xaml</DependentUpon>
     </Compile>
@@ -125,6 +130,9 @@
     </Compile>
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ReadPartiesView.xaml.cs">
+      <DependentUpon>ReadPartiesView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ReadUsersView.xaml.cs">
       <DependentUpon>ReadUsersView.xaml</DependentUpon>
@@ -191,6 +199,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\CreateUpdatePartyView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\CreateUpdateUserView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -204,6 +216,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\LoginView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ReadPartiesView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

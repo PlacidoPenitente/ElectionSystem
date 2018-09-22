@@ -5,7 +5,7 @@ namespace ElectionSystem.Models
 {
     public sealed class Election : BaseModel
     {
-        public int Id { get; set; }
+        public int Id { get; set; } = -1;
         [Required]
         [MaxLength(255)]
         [Index(IsUnique = true)]

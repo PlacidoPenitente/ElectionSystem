@@ -4,15 +4,15 @@ using ElectionSystem.Models;
 
 namespace ElectionSystem.ViewModels
 {
-    public class ReadUsersViewModel : BaseWorkspacePageViewModel, IReadViewModel<User>, IWorkspacePageViewModel, IPage
+    public class ReadPartiesViewModel : BaseWorkspacePageViewModel, IReadViewModel<Party>, IWorkspacePageViewModel, IPage
     {
-        private ObservableCollection<User> _collection = new ObservableCollection<User>();
-        private User _selected;
+        private ObservableCollection<Party> _collection = new ObservableCollection<Party>();
+        private Party _selected;
         private string _searchTerm = "";
 
-        public ReadUsersViewModel(WorkspaceViewModel workspaceViewModel)
+        public ReadPartiesViewModel(WorkspaceViewModel workspaceViewModel)
         {
-            Title = "Users";
+            Title = "Registered Parties";
             Workspace = workspaceViewModel;
             CreateCommand = new DelegateCommand(Create);
             ReadCommand = new DelegateCommand(Read);
@@ -35,7 +35,7 @@ namespace ElectionSystem.ViewModels
 
         public DelegateCommand SearchCommand { get; }
 
-        public ObservableCollection<User> Collection
+        public ObservableCollection<Party> Collection
         {
             get => _collection;
             set
@@ -45,7 +45,7 @@ namespace ElectionSystem.ViewModels
             }
         }
 
-        public User Selected
+        public Party Selected
         {
             get => _selected;
             set
@@ -67,24 +67,24 @@ namespace ElectionSystem.ViewModels
 
         public void Create()
         {
-            Workspace.GotoCreateUpdateUser();
+            Workspace.GotoCreateUpdateParty();
         }
         public void Read()
         {
-            Collection = new ObservableCollection<User>(DbContext.User);
+            Collection = new ObservableCollection<Party>(DbContext.Parties);
         }
 
         public void Update()
         {
-            Workspace.GotoCreateUpdateUser(Selected);
+            Workspace.GotoCreateUpdateParty(Selected);
         }
 
         public void Delete()
         {
             Workspace.Dialog = new DialogViewModel
             {
-                Title = "Delete User",
-                Message = "Are you sure yo want to delete this user?",
+                Title = "Delete Party",
+                Message = "Are you sure yo want to delete this party?",
                 YesVisibility = Visibility.Visible,
                 YesCommand = new DelegateCommand(ContinueDelete),
                 NoVisibility = Visibility.Visible,
@@ -95,7 +95,7 @@ namespace ElectionSystem.ViewModels
 
         private void ContinueDelete()
         {
-            DbContext.User.Remove(Selected);
+            DbContext.Parties.Remove(Selected);
             DbContext.SaveChanges();
             Read();
             HideDialog();
@@ -108,10 +108,10 @@ namespace ElectionSystem.ViewModels
 
         public void Search()
         {
-            var tempList = new ObservableCollection<User>();
-            foreach (var party in DbContext.User)
+            var tempList = new ObservableCollection<Party>();
+            foreach (var party in DbContext.Parties)
             {
-                if (party.Username.Replace(" ", "").ToLower().Contains(SearchTerm.Replace(" ", "").ToLower()))
+                if (party.Name.Replace(" ", "").ToLower().Contains(SearchTerm.Replace(" ", "").ToLower()))
                     tempList.Add(party);
             }
             Collection = tempList;

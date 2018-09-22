@@ -32,6 +32,16 @@
         <views:CreateUpdateUserView/>
     </DataTemplate>
 
+    <!--ReadPartiesView-->
+    <DataTemplate DataType="{x:Type viewmodels:ReadPartiesViewModel}">
+        <views:ReadPartiesView/>
+    </DataTemplate>
+
+    <!--CreateParty-->
+    <DataTemplate DataType="{x:Type viewmodels:CreateUpdatePartyViewModel}">
+        <views:CreateUpdatePartyView/>
+    </DataTemplate>
+
     <!--Dialog-->
     <DataTemplate DataType="{x:Type viewmodels:DialogViewModel}">
         <views:DialogView/>
