@@ -8,6 +8,7 @@ namespace ElectionSystem.Models
         [Required]
         [MaxLength(255)]
         public string Name { get; set; }
+        public int? Slots { get; set; }
         public Election Election { get; set; }
     }
 }

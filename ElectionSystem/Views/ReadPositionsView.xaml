@@ -37,6 +37,7 @@
                     <DataGrid HeadersVisibility="Column" SelectionMode="Single" SelectionUnit="FullRow" ItemsSource="{Binding Collection, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding Selected, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserResizeRows="False" Style="{DynamicResource DataGrid}">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="Name" Binding="{Binding Name}" IsReadOnly="True"/>
+                            <DataGridTextColumn Header="Slots" Binding="{Binding Slots}" IsReadOnly="True"/>
                             <DataGridTextColumn Header="Election" Binding="{Binding Election, Converter={StaticResource ElectionToString}}" IsReadOnly="True"/>
                             <DataGridTemplateColumn>
                                 <DataGridTemplateColumn.CellTemplate>

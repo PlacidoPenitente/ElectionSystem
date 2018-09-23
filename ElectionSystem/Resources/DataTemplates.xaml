@@ -6,7 +6,11 @@
     <DataTemplate DataType="{x:Type viewmodels:LoginViewModel}">
         <views:LoginView/>
     </DataTemplate>
-    
+
+    <DataTemplate DataType="{x:Type viewmodels:VoteViewModel}">
+        <views:VoteView/>
+    </DataTemplate>
+
     <!--Workspace-->
     <DataTemplate DataType="{x:Type viewmodels:WorkspaceViewModel}">
         <views:WorkspaceView/>

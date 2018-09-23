@@ -20,6 +20,7 @@
                 <Grid Grid.Row="1">
                     <StackPanel Width="300" VerticalAlignment="Center">
                         <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.Name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" electionSystem:AttachedProperties.Label="Name:"/>
+                        <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.Slots, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" electionSystem:AttachedProperties.Label="Slots:"/>
                         <ComboBox Style="{StaticResource ComboBox}" SelectedItem="{Binding Model.Election, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" electionSystem:AttachedProperties.Label="Election:" ItemsSource="{Binding Elections, UpdateSourceTrigger=PropertyChanged}">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>

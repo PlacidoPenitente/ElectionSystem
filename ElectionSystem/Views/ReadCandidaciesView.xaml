@@ -26,7 +26,7 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="Auto"/>
                     </Grid.ColumnDefinitions>
-                    <Button Grid.Column="0" Height="40" VerticalAlignment="Bottom" FontFamily="{StaticResource RobotoLight}" FontSize="13" Content="Create Candidacy" Command="{Binding CreateCommand}" Style="{StaticResource Button}"/>
+                    <Button Grid.Column="0" Height="40" VerticalAlignment="Bottom" FontFamily="{StaticResource RobotoLight}" FontSize="13" Content="File Candidacy" Command="{Binding CreateCommand}" Style="{StaticResource Button}"/>
                     <StackPanel Grid.Column="2" Orientation="Horizontal">
                         <TextBox Width="200" Style="{StaticResource TextBox}" electionSystem:AttachedProperties.Label="Search:" Text="{Binding SearchTerm, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
                         <Button Style="{StaticResource ButtonSecondary}" Height="40" FontFamily="{StaticResource RobotoLight}" FontSize="13" VerticalAlignment="Bottom" Content="{StaticResource SearchVoters}" Command="{Binding SearchCommand}"/>

@@ -28,17 +28,27 @@ namespace ElectionSystem.ViewModels
             _readPositions = new ReadPositionsViewModel(this);
             _createUpdateCandidacy = new CreateUpdateCandidacyViewModel(new CandidacyModel(), this);
             _readCandidacies = new ReadCandidaciesViewModel(this);
+            _votePage = new VoteViewModel();
             GotoVotersCommand = new DelegateCommand(GotoReadVoters);
             GotoUsersCommand = new DelegateCommand(GotoReadUsers);
             GotoPartiesCommand = new DelegateCommand(GotoReadParties);
             GotoElectionsCommand = new DelegateCommand(GotoReadElections);
             GotoPositionsCommand = new DelegateCommand(GotoReadPositions);
             GotoCandidaciesCommand = new DelegateCommand(GotoReadCandidacies);
+            GotoVoteCommand = new DelegateCommand(GotoVote);
         }
 
         public DelegateCommand GotoUsersCommand { get; }
         public DelegateCommand GotoPartiesCommand { get; }
         public DelegateCommand GotoElectionsCommand { get; }
+
+        private readonly VoteViewModel _votePage;
+        public DelegateCommand GotoVoteCommand { get; set; }
+
+        public void GotoVote()
+        {
+            CurrentPage = _votePage;
+        }
 
         public IWorkspacePageViewModel CurrentPage
         {
@@ -105,7 +115,7 @@ namespace ElectionSystem.ViewModels
         public void GotoCreateUpdateCandidacy(Candidacy candidacy = null)
         {
             _createUpdateCandidacy.UpdateValues();
-            _createUpdateCandidacy.Election =
+            if(candidacy!=null) _createUpdateCandidacy.Election =
                 _createUpdateCandidacy.Elections.Single(election => election.Id == candidacy.Position.Election.Id);
             _createUpdateCandidacy.Title = "Update Candidacy";
             if (candidacy == null) _createUpdateCandidacy.Title = "Create New Candidacy";

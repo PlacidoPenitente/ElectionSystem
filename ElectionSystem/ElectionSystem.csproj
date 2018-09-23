@@ -101,6 +101,10 @@
     <Compile Include="Migrations\201809200955011_UpdatedDateTime.Designer.cs">
       <DependentUpon>201809200955011_UpdatedDateTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809231524413_AddedSlots.cs" />
+    <Compile Include="Migrations\201809231524413_AddedSlots.Designer.cs">
+      <DependentUpon>201809231524413_AddedSlots.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ballot.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Candidacy.cs" />
@@ -126,6 +130,7 @@
     <Compile Include="ViewModels\ReadPositionsViewModel.cs" />
     <Compile Include="ViewModels\ReadUsersViewModel.cs" />
     <Compile Include="ViewModels\ReadVotersViewModel.cs" />
+    <Compile Include="ViewModels\VoteViewModel.cs" />
     <Compile Include="ViewModels\WorkspaceViewModel.cs" />
     <Compile Include="Views\CreateUpdateCandidacyView.xaml.cs">
       <DependentUpon>CreateUpdateCandidacyView.xaml</DependentUpon>
@@ -168,6 +173,9 @@
     </Compile>
     <Compile Include="Views\ReadVotersView.xaml.cs">
       <DependentUpon>ReadVotersView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\VoteView.xaml.cs">
+      <DependentUpon>VoteView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\WorkspaceView.xaml.cs">
       <DependentUpon>WorkspaceView.xaml</DependentUpon>
@@ -284,6 +292,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\VoteView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\WorkspaceView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -336,6 +348,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809200955011_UpdatedDateTime.resx">
       <DependentUpon>201809200955011_UpdatedDateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809231524413_AddedSlots.resx">
+      <DependentUpon>201809231524413_AddedSlots.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

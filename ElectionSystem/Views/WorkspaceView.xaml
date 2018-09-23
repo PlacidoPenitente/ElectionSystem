@@ -21,7 +21,7 @@
                             <RadioButton Content="Elections" Style="{StaticResource Menu}" Command="{Binding GotoElectionsCommand}"/>
                             <RadioButton Content="Positions" Style="{StaticResource Menu}" Command="{Binding GotoPositionsCommand}"/>
                             <RadioButton Content="Candidacies" Style="{StaticResource Menu}" Command="{Binding GotoCandidaciesCommand}"/>
-                            <RadioButton Content="Vote" Style="{StaticResource Menu}"/>
+                            <RadioButton Content="Vote" Style="{StaticResource Menu}" Command="{Binding GotoVoteCommand}"/>
                             <RadioButton Content="Status" Style="{StaticResource Menu}"/>
                             <RadioButton Content="Users" Style="{StaticResource Menu}" Command="{Binding GotoUsersCommand}"/>
                         </StackPanel>
@@ -29,9 +29,7 @@
                 </Grid>
                 <Grid Grid.Column="1">
                     <Border>
-                        <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
-                            <ContentControl Content="{Binding CurrentPage, UpdateSourceTrigger=PropertyChanged}"/>
-                        </ScrollViewer>
+                        <ContentControl Content="{Binding CurrentPage, UpdateSourceTrigger=PropertyChanged}"/>
                     </Border>
                 </Grid>
                 <Grid Grid.Column="1">

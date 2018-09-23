@@ -16,6 +16,16 @@ namespace ElectionSystem.Facades
             }
         }
 
+        public int? Slots
+        {
+            get => Position.Slots;
+            set
+            {
+                Position.Slots = value;
+                OnPropertyChanged();
+            }
+        }
+
         public Election Election
         {
             get => Position.Election;
