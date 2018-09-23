@@ -18,7 +18,7 @@
             <RowDefinition Height="25"/>
         </Grid.RowDefinitions>
         <Grid>
-            
+            <TextBlock Text="Election App" FontFamily="{StaticResource Roboto}" FontSize="25" VerticalAlignment="Center" Margin="20" Foreground="{StaticResource Turquoise}"/>
         </Grid>
         <Grid Grid.Row="1">
             <ContentControl Content="{Binding CurrentPage, UpdateSourceTrigger=PropertyChanged}"/>

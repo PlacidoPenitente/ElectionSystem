@@ -105,6 +105,10 @@
     <Compile Include="Migrations\201809231524413_AddedSlots.Designer.cs">
       <DependentUpon>201809231524413_AddedSlots.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809231813186_AddedUser.cs" />
+    <Compile Include="Migrations\201809231813186_AddedUser.Designer.cs">
+      <DependentUpon>201809231813186_AddedUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\Ballot.cs" />
     <Compile Include="Models\BaseModel.cs" />
     <Compile Include="Models\Candidacy.cs" />
@@ -351,6 +355,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809231524413_AddedSlots.resx">
       <DependentUpon>201809231524413_AddedSlots.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809231813186_AddedUser.resx">
+      <DependentUpon>201809231813186_AddedUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

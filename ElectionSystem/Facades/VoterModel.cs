@@ -6,6 +6,35 @@ namespace ElectionSystem.Facades
     public sealed class VoterModel : BaseInpc
     {
         public Voter Voter { get; set; }
+        public string Username
+        {
+            get => Voter.Username;
+            set
+            {
+                Voter.Username = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Password
+        {
+            get => Voter.Password;
+            set
+            {
+                Voter.Password = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public AccountType AccountType
+        {
+            get => Voter.AccountType;
+            set
+            {
+                Voter.AccountType = value;
+                OnPropertyChanged();
+            }
+        }
 
         public string FirstName
         {

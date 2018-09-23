@@ -56,7 +56,7 @@
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-                <Button Grid.Row="2" Margin="20,0,0,0" Content="Save Ballot" Style="{StaticResource Button}"/>
+                <Button Grid.Row="2" Margin="20,0,0,0" Content="Save Ballot" Style="{StaticResource Button}" Command="{Binding SaveBallotCommand}"/>
             </Grid>
         </Grid>
         <Border BorderThickness="1" BorderBrush="{StaticResource Turquoise}" CornerRadius="10" Background="{StaticResource MidnightBlue}">

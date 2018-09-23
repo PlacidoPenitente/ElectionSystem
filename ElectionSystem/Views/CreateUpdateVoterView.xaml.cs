@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ElectionSystem.ViewModels;
 
 namespace ElectionSystem.Views
 {
@@ -23,6 +24,12 @@ namespace ElectionSystem.Views
         public CreateUpdateVoterView()
         {
             InitializeComponent();
+        }
+
+        private void PasswordBox_OnPasswordChanged(object sender, RoutedEventArgs e)
+        {
+            var pass = (CreateUpdateVoterViewModel) DataContext;
+            pass.Model.Password = PasswordBox.Password;
         }
     }
 }

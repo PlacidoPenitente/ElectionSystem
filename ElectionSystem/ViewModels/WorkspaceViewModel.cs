@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Windows;
 using ElectionSystem.Facades;
 using ElectionSystem.Models;
 
@@ -199,29 +200,16 @@ namespace ElectionSystem.ViewModels
             }
         }
 
-        public void ShowYesNoDialog()
+        private Visibility _forAdmin = Visibility.Collapsed;
+
+        public Visibility ForAdmin
         {
-
-        }
-
-        public void ShowWaitDialog()
-        {
-
-        }
-
-        public void ShowErrorDialog()
-        {
-
-        }
-
-        public void ShowSuccessDialog()
-        {
-
-        }
-
-        public void ShowInfoDialog()
-        {
-
+            get => _forAdmin;
+            set
+            {
+                _forAdmin = value;
+                OnPropertyChanged();
+            }
         }
     }
 }

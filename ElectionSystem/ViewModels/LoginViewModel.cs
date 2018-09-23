@@ -1,4 +1,7 @@
-﻿namespace ElectionSystem.ViewModels
+﻿using System.Linq;
+using ElectionSystem.Models;
+
+namespace ElectionSystem.ViewModels
 {
     public class LoginViewModel : BaseInpc, IPage
     {
@@ -38,7 +41,13 @@
 
         public void LogIn()
         {
-            _mainWindow.GotoWorkspace();
+            var db = new ApplicationDbContext();
+            if (db.Voters.Any(x => x.Username.Equals(Username) && x.Password.Equals(Password)))
+            {
+                _mainWindow.CurrentUser =
+                    db.Voters.Single(x => x.Username.Equals(Username) && x.Password.Equals(Password));
+                _mainWindow.GotoWorkspace();
+            }
         }
     }
 }

@@ -66,6 +66,7 @@ namespace ElectionSystem.ViewModels
             VoteCommand = new DelegateCommand(Vote);
             Ballot = new ObservableCollection<Candidacy>();
             RemoveCommand = new DelegateCommand(RemoveCandidate);
+            SaveBallotCommand = new DelegateCommand(SaveBallot);
         }
 
         private Candidacy _selectedCandidate;
@@ -97,6 +98,28 @@ namespace ElectionSystem.ViewModels
                     Ballot.Add(Selected);
                 }
             }
+        }
+
+        public DelegateCommand SaveBallotCommand { get; set; }
+        public void SaveBallot()
+        {
+            var ballot = new Ballot
+            {
+                Voter = DbContext.Voters.Single(x=>x.Id==5)
+            };
+
+            DbContext.Ballots.Add(ballot);
+            DbContext.SaveChanges();
+            foreach (var candidacy in Ballot)
+            {
+                DbContext.Votes.Add(new Vote
+                {
+                    Ballot = ballot,
+                    Candidacy = candidacy
+                });
+            }
+
+            DbContext.SaveChanges();
         }
 
         public void Search()

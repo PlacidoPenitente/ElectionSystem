@@ -17,25 +17,33 @@
                     <TextBlock Margin="20,0,20,0" Text="{Binding Title}" FontSize="17" Foreground="{StaticResource Turquoise}" FontFamily="{StaticResource Roboto}" VerticalAlignment="Center"/>
                 </Grid>
                 <Grid Grid.Row="1">
-                    <StackPanel Width="300" VerticalAlignment="Center">
-                        <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterFirstName}"/>
-                        <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.MiddleName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterMiddleName}"/>
-                        <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterLastName}"/>
-                        <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.Birthdate, Mode=TwoWay, UpdateSourceTrigger=LostFocus, Converter={StaticResource DateTimeToString}}" local:AttachedProperties.Label="{StaticResource VoterBirthdate}"/>
-                        <ComboBox Style="{StaticResource ComboBox}" SelectedIndex="{Binding Model.Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource IntegerToGender}}" local:AttachedProperties.Label="{StaticResource VoterGender}">
-                            <ComboBoxItem Content="Male"/>
-                            <ComboBoxItem Content="Female"/>
-                        </ComboBox>
-                        <TextBox TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" MaxLines="5" MinLines="5" Style="{StaticResource TextBox}" Text="{Binding Model.Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterAddress}"/>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Button Style="{StaticResource ButtonSecondary}" Grid.Column="0" Content="{StaticResource Save}" Command="{Binding SaveCommand}"/>
-                            <Button Style="{StaticResource ButtonWarning}" Grid.Column="1" Content="{StaticResource Cancel}" Command="{Binding CancelCommand}"/>
-                        </Grid>
-                    </StackPanel>
+                    <ScrollViewer VerticalAlignment="Center">
+                        <StackPanel Width="300">
+                            <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterFirstName}"/>
+                            <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.MiddleName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterMiddleName}"/>
+                            <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterLastName}"/>
+                            <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.Birthdate, Mode=TwoWay, UpdateSourceTrigger=LostFocus, Converter={StaticResource DateTimeToString}}" local:AttachedProperties.Label="{StaticResource VoterBirthdate}"/>
+                            <ComboBox Style="{StaticResource ComboBox}" SelectedIndex="{Binding Model.Gender, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource IntegerToGender}}" local:AttachedProperties.Label="{StaticResource VoterGender}">
+                                <ComboBoxItem Content="Male"/>
+                                <ComboBoxItem Content="Female"/>
+                            </ComboBox>
+                            <TextBox TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AcceptsReturn="True" MaxLines="5" MinLines="5" Style="{StaticResource TextBox}" Text="{Binding Model.Address, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource VoterAddress}"/>
+                            <TextBox Style="{StaticResource TextBox}" Text="{Binding Model.Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" local:AttachedProperties.Label="{StaticResource Username}"/>
+                            <PasswordBox x:Name="PasswordBox" PasswordChanged="PasswordBox_OnPasswordChanged" Style="{StaticResource PasswordBox}" local:AttachedProperties.Label="Password:"/>
+                            <ComboBox Style="{StaticResource ComboBox}" SelectedIndex="{Binding Model.AccountType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource IntegerToAccountType}}" local:AttachedProperties.Label="Account Type:">
+                                <ComboBoxItem Content="Standard"/>
+                                <ComboBoxItem Content="Administrator"/>
+                            </ComboBox>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Button Style="{StaticResource ButtonSecondary}" Grid.Column="0" Content="{StaticResource Save}" Command="{Binding SaveCommand}"/>
+                                <Button Style="{StaticResource ButtonWarning}" Grid.Column="1" Content="{StaticResource Cancel}" Command="{Binding CancelCommand}"/>
+                            </Grid>
+                        </StackPanel>
+                    </ScrollViewer>
                 </Grid>
             </Grid>
         </Border>

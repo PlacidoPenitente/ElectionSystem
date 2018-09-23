@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ElectionSystem.Models
 {
@@ -19,5 +20,16 @@ namespace ElectionSystem.Models
         [MaxLength(255)]
         public string Address { get; set; }
         public string Photo { get; set; }
+        [Required]
+        [DataType(DataType.Password)]
+        [MaxLength(64)]
+        [MinLength(8)]
+        public string Username { get; set; }
+        [Required]
+        [DataType(DataType.Password)]
+        [MaxLength(64)]
+        [MinLength(8)]
+        public string Password { get; set; }
+        public AccountType AccountType { get; set; }
     }
 }
