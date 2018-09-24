@@ -30,6 +30,7 @@ namespace ElectionSystem.ViewModels
             _createUpdateCandidacy = new CreateUpdateCandidacyViewModel(new CandidacyModel(), this);
             _readCandidacies = new ReadCandidaciesViewModel(this);
             _votePage = new VoteViewModel();
+            _statusPage = new StatusViewModel();
             GotoVotersCommand = new DelegateCommand(GotoReadVoters);
             GotoUsersCommand = new DelegateCommand(GotoReadUsers);
             GotoPartiesCommand = new DelegateCommand(GotoReadParties);
@@ -37,6 +38,7 @@ namespace ElectionSystem.ViewModels
             GotoPositionsCommand = new DelegateCommand(GotoReadPositions);
             GotoCandidaciesCommand = new DelegateCommand(GotoReadCandidacies);
             GotoVoteCommand = new DelegateCommand(GotoVote);
+            GotoStatusCommand = new DelegateCommand(GotoStatus);
         }
 
         public DelegateCommand GotoUsersCommand { get; }
@@ -49,6 +51,14 @@ namespace ElectionSystem.ViewModels
         public void GotoVote()
         {
             CurrentPage = _votePage;
+        }
+
+        private readonly StatusViewModel _statusPage;
+        public DelegateCommand GotoStatusCommand { get; set; }
+
+        public void GotoStatus()
+        {
+            CurrentPage = _statusPage;
         }
 
         public IWorkspacePageViewModel CurrentPage

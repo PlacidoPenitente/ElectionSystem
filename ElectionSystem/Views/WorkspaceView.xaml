@@ -22,7 +22,7 @@
                             <RadioButton Visibility="{Binding ForAdmin, UpdateSourceTrigger=PropertyChanged}" Content="Elections" Style="{StaticResource Menu}" Command="{Binding GotoElectionsCommand}"/>
                             <RadioButton Visibility="{Binding ForAdmin, UpdateSourceTrigger=PropertyChanged}" Content="Positions" Style="{StaticResource Menu}" Command="{Binding GotoPositionsCommand}"/>
                             <RadioButton Visibility="{Binding ForAdmin, UpdateSourceTrigger=PropertyChanged}" Content="Candidacies" Style="{StaticResource Menu}" Command="{Binding GotoCandidaciesCommand}"/>
-                            <RadioButton Visibility="{Binding ForAdmin, UpdateSourceTrigger=PropertyChanged}" Content="Status" Style="{StaticResource Menu}"/>
+                            <RadioButton Visibility="{Binding ForAdmin, UpdateSourceTrigger=PropertyChanged}" Content="Status" Style="{StaticResource Menu}" Command="{Binding GotoStatusCommand}"/>
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>

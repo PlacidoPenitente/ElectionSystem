@@ -11,6 +11,10 @@
         <views:VoteView/>
     </DataTemplate>
 
+    <DataTemplate DataType="{x:Type viewmodels:StatusViewModel}">
+        <views:StatusView/>
+    </DataTemplate>
+
     <!--Workspace-->
     <DataTemplate DataType="{x:Type viewmodels:WorkspaceViewModel}">
         <views:WorkspaceView/>
